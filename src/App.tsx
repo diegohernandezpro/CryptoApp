@@ -12,15 +12,16 @@ function App() {
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        
       </div>
-      <h1>Vite + React</h1>
+      <h1>New Features DISPLAY</h1>
+      <h1>New Features DISPLAY</h1>
+      <h1>New Features DISPLAY</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          count! is {count}
         </button>
+        <h2>HELLO new Features account</h2>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
