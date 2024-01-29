@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        "prim-purple-blue": "#5A5A89",
-        "prim-blueish-black": "#14142B",
+        "prim-purple-blue": " #6A6A9F",
+        "prim-blueish-black": "#191932",
         "prim-blue": "023AFF",
         "prim-birches": "#01F1E3",
         "grad1-purple": "#7517F8",

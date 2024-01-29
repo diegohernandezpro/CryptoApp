@@ -9,3 +9,11 @@
 * {
     font-family: 'Space Grotesk', sans-serif;
 }
+
+
+@layer components {
+    .header-item {
+       @apply text-white flex justify-between border-2 border-red-300 gap-2
+    }
+}
+
