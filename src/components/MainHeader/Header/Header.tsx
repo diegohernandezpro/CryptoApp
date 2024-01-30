@@ -22,9 +22,20 @@ export function Header(){
                     /> 
                     <span className="text-[#D1D1D1]">Exchanges</span><span>662</span></li>
                
-                <li className="header-item">1.66T</li>
+                <li className="header-item">
+                    <img
+                            src={"/src/assets/up-arrow.svg"}
+                            alt='bitcoin-icon'
+                        /> 
+                    <span> 1.66T</span>
+                    
+                   </li>
                 
-                <li className="header-item">$124.900B</li>
+                <li className="header-item">
+                    <span>$124.900B</span>
+                
+                    <TextNSlider />
+                </li>
                 
                 <li className="header-item">
                     <img
