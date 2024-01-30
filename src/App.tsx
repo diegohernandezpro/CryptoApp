@@ -3,7 +3,7 @@ import { Header } from "./components/MainHeader/Header/Header";
 
 const App = () => {
   return (
-      <div class="bg-black h-screen">
+      <div className="bg-[#14121B] h-screen">
         <Header />
       </div>
         
