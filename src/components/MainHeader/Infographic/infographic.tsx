@@ -19,14 +19,10 @@ const Infographic = () => {
         <Heading />
         
         <div className="border-red-500 border-2 ">
-            
-            <p>BEFORE DATA</p>
-
-            <button className="border-6 border-red-500 bg-blue-900"
+            <button className="border-8 border-red-500 bg-blue-900"
                 onClick={() => dispatch(getCoinInfo())}>
                 Get Data -- Click Me!
             </button>
-            <p>AFTER DATA</p>
         </div>
 
     </header>

@@ -14,15 +14,9 @@ const infographicSlice = createSlice({
     name: 'infographic',
     initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1;
-        },
-        decrement: (state) => {
-            state.value -= 1;
-        },
-        incrementByAmount: (state, action: PayloadAction<number>) => {
-            state.value += action.payload;
-        }   
+        // incrementByAmount: (state, action: PayloadAction<number>) => {
+        //     state.value += action.payload;
+        // }   
     },
     extraReducers: (builder) => {
         builder
@@ -30,9 +24,8 @@ const infographicSlice = createSlice({
             console.log("pending");
         })
         .addCase(getCoinInfo.fulfilled, (state, action: PayloadAction<any>) => {
-            console.log("fulfilled");
             state.value = action.payload;
-            console.log("action: " + action.payload);
+            console.log("FULLFILLED action: " + action.payload);
     
         })
         .addCase(getCoinInfo.rejected, () => {
@@ -42,33 +35,20 @@ const infographicSlice = createSlice({
     }
 });
 
-// export const incrementAsync = createAsyncThunk(
-//     "counter/incrementAsync",
-//      async (amount: number) => {
-//         await new Promise((resolve) => setTimeout(resolve, 1000));
-//         return amount;
-//      }
-// )
 
 export const getCoinInfo = createAsyncThunk(
     "infographic/getCoinData",
-    // async (coin: string) => {
-    //     console.log("before api call in async thunk");
-    //     const response = await api("/coins/", coin);
-    //     // return response.data;
-    //     return response;
-    // }
     async () => {
         console.log("before api call in async thunk");
-        const response = await api("/coins/", "bitcoin");
-        // return response.data;
+        const response = await api("/global");
+        console.log("inside getCoinInfo data following:" + response);
         return response;
+          
     }
 )
 
-export const { increment, decrement, incrementByAmount} = infographicSlice.actions;
+// export const { increment, decrement, incrementByAmount} = infographicSlice.actions;
 
-// export const getInfographicSelector = (state) => state.infographic;
 
 export default infographicSlice.reducer;
 
