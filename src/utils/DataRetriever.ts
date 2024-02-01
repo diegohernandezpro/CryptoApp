@@ -22,16 +22,10 @@ export async function api(url: string, search?: string) {
 
   if (import.meta.env.MODE === "development") {
     try {
-      console.log("in dev mode, fullURL is: " + fullUrl);
-      console.log(
-        "going to grab the following file: ./mocks/" + getfileName() + ".json"
-      );
       const file = await import(`./mocks/${getfileName()}.json`);
       let data = file.default;
-      console.log("🚀 ~ api ~ data:", data)
+      // console.log("🚀 ~ api ~ data:", data);
       return data;
-
-      
 
     } catch (error) {
       console.error("Error loading mock data:", error);

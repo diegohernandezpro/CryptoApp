@@ -2,12 +2,18 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { api } from "../../utils/DataRetriever";
 
 
-interface InfographicState {
-    value: any
-    };
+interface InfographicState { //correc this and learn to use interafce in ts
+    status: string,
+    errorMsg: string,
+    coinsData: {
+        [key: string]: any;
+    }[] | string[] | string | any
+}
 
 const initialState: InfographicState = {
-    value: 0
+    status: "IDLE",
+    errorMsg: "",
+    coinsData: ["coin1", "coin2"],
 }
 
 const infographicSlice = createSlice({
@@ -24,8 +30,8 @@ const infographicSlice = createSlice({
             console.log("pending");
         })
         .addCase(getCoinInfo.fulfilled, (state, action: PayloadAction<any>) => {
-            state.value = action.payload;
-            console.log("FULLFILLED action: " + action.payload);
+            console.log("FULLFILLED.......action.payload is: " + action.payload);
+            state.coinsData = action.payload;
     
         })
         .addCase(getCoinInfo.rejected, () => {
@@ -39,15 +45,33 @@ const infographicSlice = createSlice({
 export const getCoinInfo = createAsyncThunk(
     "infographic/getCoinData",
     async () => {
-        console.log("before api call in async thunk");
         const response = await api("/global");
-        console.log("inside getCoinInfo data following:" + response);
-        return response;
-          
+        const jsonresponse = JSON.stringify(response);
+        const jsonData = JSON.parse(jsonresponse);
+
+        const {
+              active_cryptocurrencies: numCoins,
+              markets: numExchange,
+              total_market_cap: totalMarketCap,
+              total_volume: totalVolume,
+              market_cap_percentage: marketCapPercent,
+          } = jsonData
+
+
+          const infographicData = {
+            numCoins,
+            numExchange,
+            totalMarketCap,
+            totalVolume,
+            marketCapPercent
+          };
+          console.log("🚀 ~ infographicData:", infographicData)
+
+        
+        return infographicData;
     }
 )
 
-// export const { increment, decrement, incrementByAmount} = infographicSlice.actions;
 
 
 export default infographicSlice.reducer;
