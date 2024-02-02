@@ -1,14 +1,20 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { api } from "@/utils/DataRetriever";
 import { FetchingStates } from "@/utils/FetchingStates";
+import { formatNum } from "@/utils/NumberFormatter";
 
 
 type Data = {
     numCoins: number,
     numExchange: number,
     totalMarketCap: number,
+    formattedMarketCap: string,
+    formattedCoinVolume: string,
     totalVolume: number,
-    marketCapPercent: number
+    formattedBitCap: number,
+    formattedEthCap: number,
+    marketCapPercent: number,
+    volumeVsMarketCap:  number,
 }
 
 interface InfographicState { // change. 
@@ -33,27 +39,24 @@ const infographicSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(getInfographicData.pending, (state) => {
+            .addCase(getData.pending, (state) => {
                 state.status = FetchingStates.PENDING;
-                // console.log("pending");
             })
-            .addCase(getInfographicData.fulfilled, (state, action: PayloadAction<Data>) => {
+            .addCase(getData.fulfilled, (state, action: PayloadAction<Data>) => {
                 state.status = FetchingStates.FULFILLED;
-                // console.log("FULLFILLED.......action.payload is: " + action.payload);
                 state.coinsData = action.payload;
 
             })
-            .addCase(getInfographicData.rejected, (state) => {
+            .addCase(getData.rejected, (state) => {
                 state.status = FetchingStates.REJECTED;
-                // console.log("rejected");
 
             });
     }
 });
 
 
-export const getInfographicData = createAsyncThunk(
-    "infographic/getInfographicData",
+export const getData = createAsyncThunk(
+    "infographic/getData",
     async () => {
         const response = await api("/global");
         const jsonresponse = JSON.stringify(response);
@@ -68,15 +71,27 @@ export const getInfographicData = createAsyncThunk(
         } = jsonData
 
 
+        
+        const formattedMarketCap = formatNum( totalMarketCap["usd"], "$" );
+        const formattedCoinVolume = formatNum( totalVolume["usd"], "$" );
+        const volumeVsMarketCap = parseFloat(( (totalVolume["usd"] / totalMarketCap["usd"]) * 100 ).toFixed(2));
+        const formattedBitCap = Math.round(marketCapPercent.btc);
+        const formattedEthCap = Math.round(marketCapPercent.eth);
+
         const infographicData = {
             numCoins,
             numExchange,
             totalMarketCap,
+            formattedMarketCap,
+            formattedCoinVolume,
+            formattedBitCap,
+            formattedEthCap,
             totalVolume,
-            marketCapPercent
+            marketCapPercent,
+            volumeVsMarketCap
         };
-
-
+        console.log("🚀 ~ infographicData:", infographicData)
+            
         return infographicData;
     }
 )

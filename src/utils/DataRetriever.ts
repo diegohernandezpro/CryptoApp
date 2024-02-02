@@ -4,7 +4,7 @@ export async function api(url: string, search?: string) {
   // console.log("api() DataRetriever.ts mode: " + import.meta.env.MODE); // development
   const base = "https://api.coingecko.com/api/v3";
   const fullUrl = `${base}${url}${search || ""}`;
-  console.log("DataRetriever fullUrl: " + fullUrl);
+  // console.log("DataRetriever fullUrl: " + fullUrl);
 
   const getfileName = () => {
     const fullUrlName = url.split("/").slice(1);

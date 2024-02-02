@@ -1,14 +1,19 @@
 import { AppDispatch, RootState } from "@/state/store"
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
-import { getInfographicData } from "@/state/infographic/infographicSlice";
+import { getData } from "@/state/infographic/infographicSlice";
 import {TextNSlider} from "./TextNSlider"
 
 
 const Infographic = () => {
-  const infographicState = useSelector((state: RootState) => state.infographic);
-  console.log("🚀 ~ Infographic ~ infographicState:", infographicState)
+  const {coinsData} = useSelector((state: RootState) => state.infographic);
+  console.log("🚀 ~ Infographic ~ infographicState:", coinsData)
   
   const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(getData())
+    }, [dispatch]); 
 
   return (
     <header className="fixed f w-full h-14 px-[72px] py-4 text-yellow-500 border rounded-md border-none bg-prim-blueish-black">
@@ -19,7 +24,7 @@ const Infographic = () => {
                     src={"/src/assets/flash-cricle.svg"}
                     alt='flash-circle'
                 /> 
-                    <span className="text-[#D1D1D1]">Coins</span><span>{900}</span>
+                    <span className="text-[#D1D1D1]"></span>Coins<span>{coinsData?.numCoins}</span>
             
             </li>
             
@@ -28,21 +33,21 @@ const Infographic = () => {
                     src={"/src/assets/exchange-icon.svg"}
                     alt='exchange-icon'
                 /> 
-                <span className="text-[#D1D1D1]">Exchanges</span><span>{700}</span></li>
+                <span className="text-[#D1D1D1]">Exchanges</span><span>{coinsData?.numExchange}</span></li>
         
             <li className="header-item">
                 <img
                         src={"/src/assets/up-arrow.svg"}
                         alt='bitcoin-icon'
                     /> 
-                <span>{400}</span>
+                <span>{coinsData?.formattedMarketCap}</span>
                 
             </li>
             
             <li className="header-item">
-                <span>{500}</span>
+                <span>{coinsData?.formattedCoinVolume}</span>
             
-                <TextNSlider />
+                <TextNSlider percentage={coinsData?.volumeVsMarketCap || 0} name="currency"/>
             </li>
             
             <li className="header-item">
@@ -50,24 +55,15 @@ const Infographic = () => {
                     src={"/src/assets/bitcoin.svg"}
                     alt='bitcoin-icon'
                 /> 
-                <span>{600}</span> <TextNSlider /> </li>
+                <span>{`${coinsData?.formattedBitCap} %`}</span> <TextNSlider percentage={coinsData?.formattedBitCap || 0} name= "bitcoin" /> </li>
 
             <li className="header-item">
 
                 <img
                     src={"/src/assets/etherum.svg"}
                     alt='etherum-icon'
-                /><span>{900}</span> <TextNSlider /> 
-            </li>
+                /><span>{`${coinsData?.formattedEthCap} %`}</span> <TextNSlider percentage={coinsData?.formattedEthCap || 0} name="ethereum" /> </li>
     </ul>
-        
-        <div className="border-red-500 border-2 ">
-            <button className="border-8 border-red-500 bg-blue-900"
-                onClick={() => dispatch(getInfographicData())}>
-                Get Data -- Click Me!
-            </button>
-        </div>
-
     </header>
   )
 }

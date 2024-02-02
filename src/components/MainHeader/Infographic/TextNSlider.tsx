@@ -1,14 +1,18 @@
 
-export const TextNSlider = () => {
+export const TextNSlider = (props: { percentage: number, name: "bitcoin" | "ethereum" | "currency"}) =>{
 
-let fill: number = 30;
-let color: string = "#F7931A"
+const fillAmount: number = (props.percentage / 100) * 51;
+const color = {
+  bitcoin: "#F7931A",
+  ethereum: "#849DFF",
+  currency: "#FFFFFF"
+}
 
   return (
     <div className="h-[6px] bg-[#FFFFFF66] w-[51px]">
         <div 
         className=" h-[6px]"
-        style={{ width: `${fill}px`, background:`${color}`}}
+        style={{ width: `${fillAmount}px`, background:`${color[props.name]}`}}
         ></div>
     </div>
   )
