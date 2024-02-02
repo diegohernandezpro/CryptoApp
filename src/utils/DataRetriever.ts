@@ -24,7 +24,6 @@ export async function api(url: string, search?: string) {
     try {
       const file = await import(`./mocks/${getfileName()}.json`);
       let data = file.default;
-      // console.log("🚀 ~ api ~ data:", data);
       return data;
 
     } catch (error) {

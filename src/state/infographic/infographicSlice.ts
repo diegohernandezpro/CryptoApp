@@ -1,8 +1,8 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { api } from "../../utils/DataRetriever";
+import { api } from "@/utils/DataRetriever";
 
 
-interface InfographicState { //correc this and learn to use interafce in ts
+interface InfographicState { // change. 
     status: string,
     errorMsg: string,
     coinsData: {
