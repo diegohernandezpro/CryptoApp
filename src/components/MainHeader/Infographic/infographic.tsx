@@ -1,6 +1,6 @@
 import { AppDispatch, RootState } from "@/state/store"
 import { useSelector, useDispatch } from "react-redux"
-import { getCoinInfo } from "@/state/infographic/infographicSlice";
+import { getInfographicData } from "@/state/infographic/infographicSlice";
 import {TextNSlider} from "./TextNSlider"
 
 
@@ -63,7 +63,7 @@ const Infographic = () => {
         
         <div className="border-red-500 border-2 ">
             <button className="border-8 border-red-500 bg-blue-900"
-                onClick={() => dispatch(getCoinInfo())}>
+                onClick={() => dispatch(getInfographicData())}>
                 Get Data -- Click Me!
             </button>
         </div>

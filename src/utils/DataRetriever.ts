@@ -21,9 +21,23 @@ export async function api(url: string, search?: string) {
   };
 
   if (import.meta.env.MODE === "development") {
+
+    type Data = {
+      active_cryptocurrencies: number,
+      ended_icos: number,
+      market_cap_change_percentage_24h_usd: number,
+      market_cap_percentage: object,
+      markets: number, 
+      ongoing_icos: number, 
+      total_market_cap: object,
+      total_volume: object,
+      upcoming_icos: number,
+      updated_at: number
+    }
+
     try {
       const file = await import(`./mocks/${getfileName()}.json`);
-      let data = file.default;
+      const data: Data = file.default;
       return data;
 
     } catch (error) {

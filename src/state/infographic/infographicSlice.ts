@@ -1,20 +1,27 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { api } from "@/utils/DataRetriever";
+import { FetchingStates } from "@/utils/FetchingStates";
 
+
+type Data = {
+    numCoins: number,
+    numExchange: number,
+    totalMarketCap: number,
+    totalVolume: number,
+    marketCapPercent: number
+}
 
 interface InfographicState { // change. 
     status: string,
-    errorMsg: string,
-    coinsData: {
-        [key: string]: any;
-    }[] | string[] | string | any
+    errorMsg: string | null,
+    coinsData: Data | null,
 }
 
 const initialState: InfographicState = {
-    status: "IDLE",
-    errorMsg: "",
-    coinsData: ["coin1", "coin2"],
-}
+    status: FetchingStates.IDLE,
+    errorMsg: null,
+    coinsData: null,
+    };
 
 const infographicSlice = createSlice({
     name: 'infographic',
@@ -26,48 +33,50 @@ const infographicSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-        .addCase(getCoinInfo.pending, () => {
-            console.log("pending");
-        })
-        .addCase(getCoinInfo.fulfilled, (state, action: PayloadAction<any>) => {
-            console.log("FULLFILLED.......action.payload is: " + action.payload);
-            state.coinsData = action.payload;
-    
-        })
-        .addCase(getCoinInfo.rejected, () => {
-            console.log("rejected");
-        
-        });
+            .addCase(getInfographicData.pending, (state) => {
+                state.status = FetchingStates.PENDING;
+                // console.log("pending");
+            })
+            .addCase(getInfographicData.fulfilled, (state, action: PayloadAction<Data>) => {
+                state.status = FetchingStates.FULFILLED;
+                // console.log("FULLFILLED.......action.payload is: " + action.payload);
+                state.coinsData = action.payload;
+
+            })
+            .addCase(getInfographicData.rejected, (state) => {
+                state.status = FetchingStates.REJECTED;
+                // console.log("rejected");
+
+            });
     }
 });
 
 
-export const getCoinInfo = createAsyncThunk(
-    "infographic/getCoinData",
+export const getInfographicData = createAsyncThunk(
+    "infographic/getInfographicData",
     async () => {
         const response = await api("/global");
         const jsonresponse = JSON.stringify(response);
         const jsonData = JSON.parse(jsonresponse);
 
         const {
-              active_cryptocurrencies: numCoins,
-              markets: numExchange,
-              total_market_cap: totalMarketCap,
-              total_volume: totalVolume,
-              market_cap_percentage: marketCapPercent,
-          } = jsonData
+            active_cryptocurrencies: numCoins,
+            markets: numExchange,
+            total_market_cap: totalMarketCap,
+            total_volume: totalVolume,
+            market_cap_percentage: marketCapPercent,
+        } = jsonData
 
 
-          const infographicData = {
+        const infographicData = {
             numCoins,
             numExchange,
             totalMarketCap,
             totalVolume,
             marketCapPercent
-          };
-          console.log("🚀 ~ infographicData:", infographicData)
+        };
 
-        
+
         return infographicData;
     }
 )
