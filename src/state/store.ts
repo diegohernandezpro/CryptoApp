@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import infographicReducer from "./infographic/infographicSlice";  // import the reducer from the slice file
+import infographicReducer from "./infographic/infographicSlice";
+import currencyReducer from "./currency/currencySlice";
+
 
 export const store = configureStore({
     reducer: {
         infographic: infographicReducer,
+        currency: currencyReducer,
     }
 })
 

@@ -7,7 +7,7 @@ import {TextNSlider} from "./TextNSlider"
 
 const Infographic = () => {
   const {coinsData} = useSelector((state: RootState) => state.infographic);
-  console.log("🚀 ~ Infographic ~ infographicState:", coinsData)
+//   console.log("🚀 ~ Infographic ~ infographicState:", coinsData)
   
   const dispatch = useDispatch<AppDispatch>();
 
@@ -16,8 +16,7 @@ const Infographic = () => {
     }, [dispatch]); 
 
   return (
-    <header className="fixed f w-full h-14 px-[72px] py-4 text-yellow-500 border rounded-md border-none bg-prim-blueish-black">
-        
+    <header className="flex w-full h-14 px-[72px] py-4 border-4 rounded-md border-red-500 bg-prim-blueish-black">
         <ul className="flex justify-center gap-8">
             <li className="header-item">
                 <img
