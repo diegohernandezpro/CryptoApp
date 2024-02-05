@@ -1,0 +1,8 @@
+const enum FETCHING_STATE {
+  IDLE = "IDLE",
+  PENDING =  "PENDING",
+  FULFILLED = "FULFILLED",
+  REJECTED = "REJECTED",
+}
+
+export default FETCHING_STATE;

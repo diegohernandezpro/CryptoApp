@@ -1,7 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { api } from "@/utils/DataRetriever";
-import { FetchingStates } from "@/utils/FetchingStates";
 import { formatNum } from "@/utils/NumberFormatter";
+import FETCHING_STATE from "../fetchingState";
 
 
 type Data = {
@@ -24,7 +24,7 @@ interface InfographicState { // change.
 }
 
 const initialState: InfographicState = {
-    status: FetchingStates.IDLE,
+    status: FETCHING_STATE.IDLE,
     errorMsg: null,
     coinsData: null,
     };
@@ -40,15 +40,15 @@ const infographicSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getData.pending, (state) => {
-                state.status = FetchingStates.PENDING;
+                state.status = FETCHING_STATE.PENDING;
             })
             .addCase(getData.fulfilled, (state, action: PayloadAction<Data>) => {
-                state.status = FetchingStates.FULFILLED;
+                state.status = FETCHING_STATE.FULFILLED;
                 state.coinsData = action.payload;
 
             })
             .addCase(getData.rejected, (state) => {
-                state.status = FetchingStates.REJECTED;
+                state.status = FETCHING_STATE.REJECTED;
 
             });
     }
