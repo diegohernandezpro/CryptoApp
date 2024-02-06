@@ -1,10 +1,12 @@
-import { Header } from "./components/MainHeader/Header/Header";
+import Infographic from "./components/MainHeader/Infographic/infographic";
+import Header from "./components/MainHeader/Header/Header";
 
 
 const App = () => {
   return (
       <div className="bg-[#14121B] h-screen">
-        <Header />
+        <Infographic />
+        <Header/>
       </div>
         
   );

@@ -16,8 +16,8 @@ const Infographic = () => {
     }, [dispatch]); 
 
   return (
-    <header className="flex w-full h-14 px-[72px] py-4 border-4 rounded-md border-red-500 bg-prim-blueish-black">
-        <ul className="flex justify-center gap-8">
+    <header className="flex w-screen h-14 px-[72px] py-4 border-none rounded-md  bg-prim-blueish-black">
+        <ul className="flex justify-center gap-8 w-screen">
             <li className="header-item">
                 <img
                     src={"/src/assets/flash-cricle.svg"}
@@ -62,7 +62,7 @@ const Infographic = () => {
                     src={"/src/assets/etherum.svg"}
                     alt='etherum-icon'
                 /><span>{`${coinsData?.formattedEthCap} %`}</span> <TextNSlider percentage={coinsData?.formattedEthCap || 0} name="ethereum" /> </li>
-    </ul>
+        </ul>
     </header>
   )
 }

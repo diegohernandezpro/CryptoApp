@@ -1,17 +1,13 @@
+import CurrencySelector from "./CurrencySelector/currencySelector";
 
-import Infographic from "../Infographic/infographic"
-import CurrencySelector from "../CurrencySelector/currencySelector"
-
-export function Header(){
+function Header(){
   
     return(
-      <div className="flex border-4 h-[100px] border-orange-300"> 
-        <Infographic />
-        <div className="w-screen h-[48px] border-blue-500">
-
-        </div>
+      <div className="flex h-[48px] justify-between"> 
+        <CurrencySelector/> 
       </div>
     )
 }
 
  
+export default Header;
