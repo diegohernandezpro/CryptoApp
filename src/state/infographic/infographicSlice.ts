@@ -2,6 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { api } from "@/utils/DataRetriever";
 import { formatNum } from "@/utils/NumberFormatter";
 import FETCHING_STATE from "../fetchingState";
+import { RootState } from "../store";
 
 
 type Data = {
@@ -28,6 +29,7 @@ const initialState: InfographicState = {
     errorMsg: null,
     coinsData: null,
     };
+
 
 const infographicSlice = createSlice({
     name: 'infographic',
@@ -57,11 +59,13 @@ const infographicSlice = createSlice({
 
 export const getData = createAsyncThunk(
     "infographic/getData",
-    async () => {
+    async (_, { getState }) => {
         const response = await api("/global");
         const jsonresponse = JSON.stringify(response);
         const jsonData = JSON.parse(jsonresponse);
-
+        const {currency, symbol} = (getState() as RootState).currency;
+        const currencyType = currency.toLocaleLowerCase();
+        
         const {
             active_cryptocurrencies: numCoins,
             markets: numExchange,
@@ -69,12 +73,14 @@ export const getData = createAsyncThunk(
             total_volume: totalVolume,
             market_cap_percentage: marketCapPercent,
         } = jsonData
-
-
         
-        const formattedMarketCap = formatNum( totalMarketCap["usd"], "$" );
-        const formattedCoinVolume = formatNum( totalVolume["usd"], "$" );
-        const volumeVsMarketCap = parseFloat(( (totalVolume["usd"] / totalMarketCap["usd"]) * 100 ).toFixed(2));
+        
+        const formattedMarketCap = formatNum( totalMarketCap[currencyType], symbol );
+        console.log("🚀 ~ formattedMarketCap:", formattedMarketCap)
+        const formattedCoinVolume = formatNum( totalVolume[currencyType], symbol);
+        console.log("🚀 ~ formattedCoinVolume:", formattedCoinVolume)
+        const volumeVsMarketCap = parseFloat(( (totalVolume[currencyType] / totalMarketCap[currencyType]) * 100 ).toFixed(2));
+        console.log("🚀 ~ volumeVsMarketCap:", volumeVsMarketCap)
         const formattedBitCap = Math.round(marketCapPercent.btc);
         const formattedEthCap = Math.round(marketCapPercent.eth);
 
@@ -90,6 +96,7 @@ export const getData = createAsyncThunk(
             marketCapPercent,
             volumeVsMarketCap
         };
+        console.log("🚀 ~ infographicData:", infographicData)
         return infographicData;
     }
 )

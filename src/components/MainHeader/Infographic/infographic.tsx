@@ -7,8 +7,6 @@ import {TextNSlider} from "./TextNSlider"
 
 const Infographic = () => {
   const {coinsData} = useSelector((state: RootState) => state.infographic);
-//   console.log("🚀 ~ Infographic ~ infographicState:", coinsData)
-  
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
