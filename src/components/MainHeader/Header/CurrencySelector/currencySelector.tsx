@@ -6,7 +6,7 @@ const CurrencySelector = () => {
   const dispatch = useDispatch<AppDispatch>();
   const currency = useSelector((state: RootState) => state.currency);
 
-  const handleSelectChange = (e) => { //type cast the event
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     dispatch(setCurrency(e.target.value));
   };
 
