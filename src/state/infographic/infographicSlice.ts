@@ -18,7 +18,10 @@ type Data = {
 };
 
 interface InfographicState {
+<<<<<<< HEAD
   // change.
+=======
+>>>>>>> Infographic
   status: string;
   errorMsg: string | null;
   coinsData: Data | null;

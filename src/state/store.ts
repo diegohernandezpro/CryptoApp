@@ -1,16 +1,44 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
+import storage from "redux-persist/lib/storage";
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+
 import infographicReducer from "./infographic/infographicSlice";
 import currencyReducer from "./currency/currencySlice";
 
+const persistConfig = {
+  key: "root",
+  storage,
+  version: 1,
+  whitelist: ["currency"],
+};
+
+const rootReducer = combineReducers({
+  currency: currencyReducer,
+  infographic: infographicReducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-    reducer: {
-        infographic: infographicReducer,
-        currency: currencyReducer,
-    }
-})
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
+export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
-
