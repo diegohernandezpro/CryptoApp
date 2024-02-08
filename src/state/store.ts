@@ -14,17 +14,19 @@ import {
 
 import infographicReducer from "./infographic/infographicSlice";
 import currencyReducer from "./currency/currencySlice";
+import themeReducer from "./theme/themeSlice";
 
 const persistConfig = {
   key: "root",
   storage,
   version: 1,
-  whitelist: ["currency"],
+  whitelist: ["currency", "theme"],
 };
 
 const rootReducer = combineReducers({
   currency: currencyReducer,
   infographic: infographicReducer,
+  theme: themeReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

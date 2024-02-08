@@ -1,4 +1,5 @@
-import { Infographic, Header } from "@/components"; // Import named exports correctly
+import Infographic from "@/components/Infographic";
+import Header from "@/components/Header";
 
 export default function App() {
   return (

@@ -2,9 +2,9 @@ import { AppDispatch, RootState } from "@/state/store";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getData } from "@/state/infographic/infographicSlice";
-import { TextNSlider } from "./TextNSlider";
+import { Slider } from "./Slider";
 
-function Infographic() {
+export default function Infographic() {
   const { coinsData } = useSelector((state: RootState) => state.infographic);
   const currency = useSelector((state: RootState) => state.currency);
   const dispatch = useDispatch<AppDispatch>();
@@ -39,7 +39,7 @@ function Infographic() {
         <li className="header-item">
           <span>{coinsData?.formattedCoinVolume}</span>
 
-          <TextNSlider
+          <Slider
             percentage={coinsData?.volumeVsMarketCap || 0}
             name="currency"
           />
@@ -48,16 +48,13 @@ function Infographic() {
         <li className="header-item">
           <img src={"/src/assets/bitcoin.svg"} alt="bitcoin-icon" />
           <span>{`${coinsData?.formattedBitCap} %`}</span>{" "}
-          <TextNSlider
-            percentage={coinsData?.formattedBitCap || 0}
-            name="bitcoin"
-          />
+          <Slider percentage={coinsData?.formattedBitCap || 0} name="bitcoin" />
         </li>
 
         <li className="header-item">
           <img src={"/src/assets/etherum.svg"} alt="etherum-icon" />
           <span>{`${coinsData?.formattedEthCap} %`}</span>{" "}
-          <TextNSlider
+          <Slider
             percentage={coinsData?.formattedEthCap || 0}
             name="ethereum"
           />
@@ -66,5 +63,3 @@ function Infographic() {
     </header>
   );
 }
-
-export default Infographic;
