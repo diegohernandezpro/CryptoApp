@@ -1,6 +1,5 @@
-import Infographic from "./components/MainHeader/Infographic/infographic";
-import Header from "./components/MainHeader/Header/Header";
-
+import Infographic from "./components/Infographic/infographic";
+import Header from "./components/Header/Header";
 
 const App = () => {
   return (
