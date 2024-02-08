@@ -1,4 +1,4 @@
-import CurrencySelector from "./CurrencySelector/CurrencySelector";
+import CurrencySelector from "./CurrencySelector";
 
 export default function Header() {
   return (
