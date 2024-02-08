@@ -6,13 +6,6 @@ const CurrencySelector = () => {
   const dispatch = useDispatch<AppDispatch>();
   const currency = useSelector((state: RootState) => state.currency);
 
-<<<<<<< HEAD
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(setCurrency(e.target.value));
-  };
-
-=======
->>>>>>> Infographic
   return (
     <div className="flex justify-around items-center w-[108px] bg-sec-blue-blacksih border border-theme-dark-border rounded-md overflow-auto gap-2 py-3 px-4 text-theme-dark cursor-pointer">
       <img
