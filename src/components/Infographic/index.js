@@ -1,1 +1,1 @@
-export { Infographic } from "./Infographic";
+export { Infographic } from "./Infographic.tsx";

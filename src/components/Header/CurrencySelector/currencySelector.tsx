@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrency } from "@/state/currency/currencySlice";
 import { RootState, AppDispatch } from "@/state/store";
+import React from "react";
 
-const CurrencySelector = () => {
+export default function CurrencySelector() {
   const dispatch = useDispatch<AppDispatch>();
   const currency = useSelector((state: RootState) => state.currency);
 
@@ -16,7 +17,9 @@ const CurrencySelector = () => {
       <select
         className="bg-sec-blue-blacksih font-mono appearance-none cursor-pointer"
         value={currency.currency}
-        onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>  dispatch(setCurrency(e.target.value))}
+        onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+          dispatch(setCurrency(e.target.value))
+        }
       >
         <option value="USD">USD</option>
         <option value="GBP">GBP</option>
@@ -27,6 +30,4 @@ const CurrencySelector = () => {
       <img src="src/assets/down-selector-arrow.svg" alt="down-arrow-icon" />
     </div>
   );
-};
-
-export default CurrencySelector;
+}

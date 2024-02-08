@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getData } from "@/state/infographic/infographicSlice";
 import { TextNSlider } from "./TextNSlider";
 
-const Infographic = () => {
+function Infographic() {
   const { coinsData } = useSelector((state: RootState) => state.infographic);
   const currency = useSelector((state: RootState) => state.currency);
   const dispatch = useDispatch<AppDispatch>();
@@ -65,6 +65,6 @@ const Infographic = () => {
       </ul>
     </header>
   );
-};
+}
 
 export default Infographic;
