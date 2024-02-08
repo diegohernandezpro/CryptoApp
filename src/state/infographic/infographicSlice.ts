@@ -88,7 +88,6 @@ export const getData = createAsyncThunk(
       marketCapPercent,
       volumeVsMarketCap,
     };
-    console.log("🚀 ~ infographicData:", infographicData);
     return infographicData;
   }
 );

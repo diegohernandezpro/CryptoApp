@@ -8,7 +8,7 @@ export default function CurrencySelector() {
   const currency = useSelector((state: RootState) => state.currency);
 
   return (
-    <div className="flex justify-around items-center w-[108px] bg-sec-blue-blacksih border border-theme-dark-border rounded-md overflow-auto gap-2 py-3 px-4 text-theme-dark cursor-pointer">
+    <div className="flex gap-2 py-3 px-4 justify-around items-center w-[108px] bg-sec-blue-blacksih border border-theme-dark-border rounded-md overflow-auto text-theme-dark cursor-pointer">
       <img
         src="src/assets/currency-selector.svg"
         alt="currency-selector-icon"

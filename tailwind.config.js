@@ -21,7 +21,6 @@ export default {
         "sec-purple": "#991BFA",
         "sec-birches": "#01F1E3",
         "sec-black": "#05050F",
-        "theme-dark": "#FFFFFF",
         "theme-dark-border": "#232336",
       },
     },

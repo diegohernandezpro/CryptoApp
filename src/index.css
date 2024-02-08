@@ -13,7 +13,10 @@
 
 @layer components {
     .header-item {
-       @apply text-white flex justify-between gap-2 items-center
+       @apply text-white flex justify-between gap-2 items-center text-white
+    }
+
+    .canvas-item {
+        @apply w-12 h-12 flex justify-center items-center bg-sec-blue-blacksih border border-theme-dark-border rounded-md cursor-pointer
     }
 }
-
