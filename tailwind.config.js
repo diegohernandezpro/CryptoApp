@@ -3,27 +3,60 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {
-        "prim-purple-blue": " #6A6A9F",
-        "prim-blueish-black": "#191932",
-        "prim-blue": "023AFF",
-        "prim-birches": "#01F1E3",
-        "grad1-purple": "#7517F8",
-        "grad1-pink": "#E323FF",
-        "grad2-blue": "#02A4FF",
-        "grad2-purple": "#7D40FF",
-        "grad3-light-blue": "#4DA1FF",
-        "grad3-teal": "#4DFFDF",
-        "sec-yellow": "#FFA63F",
-        "sec-electric-green": "#5EFF5A",
-        "sec-blue-blacksih": "#191925",
-        "sec-red": "#FF2D2E",
-        "sec-purple": "#991BFA",
-        "sec-birches": "#01F1E3",
-        "sec-black": "#05050F",
-        "theme-dark-border": "#232336",
+      textColor: {
+        skin: {
+          base: "var(--color-bg-base)",
+        },
+        info: {
+          base: "var(--color-info-text-base)",
+          muted: "var(--color-info-text-muted)",
+        },
+        header: {
+          base: "var(--color-header-text-base)",
+          muted: "var(--color-header-text-muted)",
+        },
       },
     },
+    backgroundColor: {
+      skin: {
+        base: "var(--color-bg-base)",
+      },
+      info: {
+        fill: "var(--color-info-fill)",
+      },
+      header: {
+        base: "var(--color-header-bg-base)",
+        muted: "var(--color-header-bg-muted)",
+      },
+    },
+    borderColor: {
+      skin: {},
+      info: {},
+      header: {
+        base: "var(--color-header-border)",
+      },
+    },
+    colors: {
+      "prim-purple-blue": " #6A6A9F",
+      "prim-blueish-black": "#191932",
+      "prim-blue": "023AFF",
+      "prim-birches": "#01F1E3",
+      "grad1-purple": "#7517F8",
+      "grad1-pink": "#E323FF",
+      "grad2-blue": "#02A4FF",
+      "grad2-purple": "#7D40FF",
+      "grad3-light-blue": "#4DA1FF",
+      "grad3-teal": "#4DFFDF",
+      "sec-yellow": "#FFA63F",
+      "sec-electric-green": "#5EFF5A",
+      "sec-blue-blacksih": "#191925",
+      "sec-red": "#FF2D2E",
+      "sec-purple": "#991BFA",
+      "sec-birches": "#01F1E3",
+      "sec-black": "#05050F",
+      "theme-dark-border": "#232336",
+    },
   },
+
   plugins: [],
 };

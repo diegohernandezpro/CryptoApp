@@ -7,27 +7,34 @@ import { Slider } from "./Slider";
 export default function Infographic() {
   const { coinsData } = useSelector((state: RootState) => state.infographic);
   const currency = useSelector((state: RootState) => state.currency);
+  const isDark = useSelector((state: RootState) => state.theme.isDark);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(getData());
-    console.log("loading data infographic");
   }, [dispatch, currency]);
 
   if (!coinsData) return null;
 
   return (
-    <header className="flex w-screen h-14 px-[72px] py-4 border-none rounded-md  bg-prim-blueish-black">
+    <header
+      className={[
+        "flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-fill",
+        `theme-${isDark ? "galaxy" : "glacier"}`,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <ul className="flex justify-center gap-8 w-screen">
         <li className="header-item">
           <img src={"/src/assets/flash-cricle.svg"} alt="flash-circle" />
-          <span className="text-[#D1D1D1]"></span>Coins
+          <span className="text-info-muted">Coins</span>
           <span>{coinsData?.numCoins}</span>
         </li>
 
         <li className="header-item">
           <img src={"/src/assets/exchange-icon.svg"} alt="exchange-icon" />
-          <span className="text-[#D1D1D1]">Exchanges</span>
+          <span className="text-info-muted">Exchanges</span>
           <span>{coinsData?.numExchange}</span>
         </li>
 

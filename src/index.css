@@ -10,13 +10,45 @@
     font-family: 'Space Grotesk', sans-serif;
 }
 
+.theme-galaxy {
+    --color-info-text-base: #ffffff;
+    --color-info-text-muted: #D1D1D1;
+    --color-info-fill: #1E1932;
+    
+
+    --color-header-text-base: #ffffff;
+    --color-header-text-muted: #D1D1D1;
+
+    --color-header-bg-base: #1E1932;
+    --color-header-bg-muted: #191926;
+
+    --color-header-border: #242431
+
+}
+
+
+.theme-glacier {
+    --color-info-text-base: #ffffff;
+    --color-info-text-muted: #D1D1D1;
+    --color-info-fill: #353570;
+
+
+    --color-header-text-base: #353570;
+    --color-header-text-muted: #424286;
+
+    --color-header-bg-base: #ffffff;
+    --color-header-bg-muted: #CCCCFA;
+
+    --color-header-border: #ffffff;
+}
+
 
 @layer components {
     .header-item {
-       @apply text-white flex justify-between gap-2 items-center text-white
+       @apply text-info-base flex justify-between gap-2 items-center
     }
 
     .canvas-item {
-        @apply w-12 h-12 flex justify-center items-center bg-sec-blue-blacksih border border-theme-dark-border rounded-md cursor-pointer
+        @apply flex justify-center items-center border rounded-2xl cursor-pointer bg-header-muted  border-header-base
     }
 }
