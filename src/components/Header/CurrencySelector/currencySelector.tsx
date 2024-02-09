@@ -39,7 +39,14 @@ export default function CurrencySelector() {
         <option value="BTC">BTC</option>
         <option value="ETH">ETH</option>
       </select>
-      <img src="src/assets/down-selector-arrow.svg" alt="down-arrow-icon" />
+      <img
+        src={
+          isDark
+            ? "src/assets/down-arrow-currency-galaxy.svg"
+            : "src/assets/down-arrow-currency-glacier.svg"
+        }
+        alt="down-arrow-icon"
+      />
     </div>
   );
 }
