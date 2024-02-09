@@ -4,12 +4,10 @@ import { toogleTheme } from "@/state/theme/themeSlice";
 import { useEffect } from "react";
 
 const ThemeSelector = () => {
-  const { isDark } = useSelector((state: RootState) => state.infographic); //change icon depending on theme.
+  const { isDark } = useSelector((state: RootState) => state.theme); //change icon depending on theme.
   const dispatch = useDispatch<AppDispatch>();
 
-  useEffect(() => {
-    console.log("isDark changed to: ", isDark);
-  }, [isDark]);
+  useEffect(() => {}, [isDark]);
 
   return (
     <button
