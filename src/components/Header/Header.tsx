@@ -1,5 +1,6 @@
 import CurrencySelector from "./CurrencySelector";
 import ThemeSelector from "./ThemeSelector";
+import SearchBar from "./SearchBar";
 import { useSelector } from "react-redux";
 import { RootState } from "@/state/store";
 
@@ -16,6 +17,7 @@ export default function Header() {
         .join(" ")}
     >
       <span className="gap-4 h-12 w-[540px] flex">
+        <SearchBar />
         <CurrencySelector />
         <ThemeSelector />
       </span>
