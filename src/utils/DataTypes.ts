@@ -18,8 +18,7 @@ type Coin = {
   large: string;
   thumb: string;
   symbol: string;
-  market_cap_rank: number | null; // Assuming market_cap_rank can be null
-  // Add other properties if present in your data
+  market_cap_rank: number | null;
 };
 
 type CoinsResponse = {

@@ -3,6 +3,7 @@ import { RootState } from "@/state/store";
 import { useSelector } from "react-redux";
 import { api } from "@/utils/DataRetriever";
 import type { Coin } from "@/utils/DataTypes";
+import SearchResult from "./searchResult";
 
 export default function SearchBar() {
   const { isDark } = useSelector((state: RootState) => state.theme);
@@ -11,6 +12,7 @@ export default function SearchBar() {
   const [results, setResults] = useState<Coin[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [isLoading, setLoading] = useState(false);
+  const [hasError, setError] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchQuery = e.target.value;
@@ -24,13 +26,6 @@ export default function SearchBar() {
     getCoins(searchTerm);
   };
 
-  //   const handleImageSubmit = (e: React.MouseEventHandler<HTMLImageElement>) => {
-  //     typeof e === "object" ? e.preventDefault() : null;
-
-  //     setIsVisible(true);
-  //     getCoins(searchTerm);
-  //   };
-
   const handleLinkClick = () => {
     setSearch("");
     setIsVisible(false);
@@ -43,20 +38,15 @@ export default function SearchBar() {
       const response = await api("/search", `?query=${searchTerm}`);
       let coins: Coin[] = [];
 
-      if ("coins" in response) {
-        coins = response.coins;
-        console.log("🚀 ~ getCoins ~ coins", coins);
-      } else {
-        console.error("Response doesn't contain coins property");
-      }
-
-      console.log("🚀 ~ getCoins ~ response:", coins);
+      "coins" in response
+        ? (coins = response.coins)
+        : console.error("Response doesn't contain coins property");
 
       setLoading(false);
       setResults(coins);
       setIsVisible(true);
     } catch (err) {
-      // setError(true);
+      setError(true);
       setLoading(false);
     }
   };
@@ -79,37 +69,21 @@ export default function SearchBar() {
         />
 
         <input
-          className="w-full h-full bg-header-muted placeholder:text-header-base text-header-base"
+          className="w-full h-full bg-header-muted placeholder:text-header-base text-header-base outline-none focus:outline-none"
           type="text"
           placeholder="Search..."
           onChange={handleInputChange}
           value={searchTerm}
         />
       </form>
-
       <>
         {isVisible && (
-          <>
-            {isLoading ? (
-              <div>Loading....</div>
-            ) : (
-              <ul
-                className="w-[356px] h-36 bg-header-muted border border-header-base overflow-auto flex flex-col gap-1"
-                onClick={handleLinkClick}
-              >
-                {results.map(({ name, symbol, id }) => (
-                  <li
-                    key={id}
-                    className="hover:bg-header-base text-header-accent"
-                  >
-                    <p onClick={handleLinkClick}>
-                      {name} ({symbol})
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </>
+          <SearchResult
+            results={results}
+            isLoading={isLoading}
+            hasError={hasError}
+            handleLinkClick={handleLinkClick}
+          />
         )}
       </>
     </div>
