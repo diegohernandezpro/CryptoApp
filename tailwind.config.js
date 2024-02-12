@@ -27,6 +27,7 @@ export default {
       header: {
         base: "var(--color-header-bg-base)",
         muted: "var(--color-header-bg-muted)",
+        accent: "var(--color-header-bg-accent)",
       },
     },
     borderColor: {

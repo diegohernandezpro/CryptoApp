@@ -21,6 +21,8 @@
 
     --color-header-bg-base: #1E1932;
     --color-header-bg-muted: #191926;
+    --color-header-bg-accent: #6161D6;
+
 
     --color-header-border: #242431
 
@@ -38,6 +40,7 @@
 
     --color-header-bg-base: #ffffff;
     --color-header-bg-muted: #CCCCFA;
+    --color-header-bg-accent: #6161D6;
 
     --color-header-border: #ffffff;
 }
