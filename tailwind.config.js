@@ -40,13 +40,7 @@ export default {
         base: "var(--color-header-border)",
       },
     },
-    colors: {
-      backgroundColor: {
-        baseTest: "rgba(var(--color-header-bg-base), <alpha-value>)",
-        mutedTest: "rgba(var(--color-header-bg-muted), <alpha-value>)",
-        accentTest: "rgba(var(--color-header-bg-accent), <alpha-value>)",
-      },
-    },
+    colors: {},
   },
 
   plugins: [],

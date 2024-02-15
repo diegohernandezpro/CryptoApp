@@ -1,26 +1,37 @@
 import CurrencySelector from "./CurrencySelector";
 import ThemeSelector from "./ThemeSelector";
 import SearchBar from "./SearchBar";
-import { useSelector } from "react-redux";
-import { RootState } from "@/state/store";
+import GetTheme from "@/utils/GetTheme";
 
 export default function Header() {
-  const isDark = useSelector((state: RootState) => state.theme.isDark);
-
   return (
     <div
-      className={[
-        "flex h-20 py-4 px-[72px] top-12 w-screen justify-between gap-6 bg-header-base",
-        `theme-${isDark ? "galaxy" : "glacier"}`,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={GetTheme(
+        "flex h-20 py-4 px-[72px] top-12 left-[72px] w-screen justify-between gap-6 bg-header-base"
+      )}
     >
-      <span className="gap-4 h-12 w-[540px] flex">
+      <div className="h-12 w-[265px] flex gap-6 ">
+        <span
+          className={GetTheme(
+            "w-[110px] h-12 text-header-base flex justify-center items-center"
+          )}
+        >
+          Home
+        </span>
+        <span
+          className={GetTheme(
+            "w-[131px] h-12 text-header-base flex justify-center items-center"
+          )}
+        >
+          Portfolio
+        </span>
+      </div>
+
+      <div className="gap-4 h-12 w-[540px] flex">
         <SearchBar />
         <CurrencySelector />
         <ThemeSelector />
-      </span>
+      </div>
     </div>
   );
 }

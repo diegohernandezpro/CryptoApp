@@ -1,25 +1,22 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrency } from "@/state/currency/currencySlice";
 import { RootState, AppDispatch } from "@/state/store";
-import React from "react";
+import GetTheme, { GetThemeBoolean } from "@/utils/GetTheme";
 
 export default function CurrencySelector() {
   const dispatch = useDispatch<AppDispatch>();
   const currency = useSelector((state: RootState) => state.currency);
-  const isDark = useSelector((state: RootState) => state.theme.isDark);
 
   return (
     <div
-      className={[
-        "canvas-item flex gap-2 py-3 px-4 justify-around items-center w-[108px]",
-        `theme-${isDark ? "galaxy" : "glacier"}`,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={GetTheme(
+        "canvas-item flex gap-2 py-3 px-4 justify-around items-center w-[108px]"
+      )}
     >
       <img
         src={
-          isDark
+          GetThemeBoolean()
             ? "src/assets/currency-icon-galaxy.svg"
             : "src/assets/currency-icon-glacier.svg"
         }
@@ -41,7 +38,7 @@ export default function CurrencySelector() {
       </select>
       <img
         src={
-          isDark
+          GetThemeBoolean()
             ? "src/assets/down-arrow-currency-galaxy.svg"
             : "src/assets/down-arrow-currency-glacier.svg"
         }

@@ -10,22 +10,6 @@
     font-family: 'Space Grotesk'  sans-serif;
 }
 
-@layer base {
-    :root{
-    --color-header-bg-base: 255 255 255;
-    --color-header-bg-muted: 204 204 250;
-    --color-header-bg-accent: 97 97 214;
-    }
-
-    @media(prefers-color-scheme: dark) {
-        :root {
-            --color-header-bg-base: 30 25 50;
-            --color-header-bg-muted: 25 25 38;
-            --color-header-bg-accent: 97 97 214;
-        }
-    }
-}
-
 .theme-galaxy {
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
@@ -41,6 +25,7 @@
 
 
     --color-header-border: #242431
+    --color-header-border-blend: #6161D6;
 
 }
 
@@ -59,6 +44,7 @@
     --color-header-bg-accent: #6161D6;
 
     --color-header-border: #ffffff;
+    --color-header-border-blend:#ffffff;
 }
 
 

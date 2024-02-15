@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getData } from "@/state/infographic/infographicSlice";
 import { Slider } from "./Slider";
+import GetTheme from "@/utils/GetTheme";
 
 export default function Infographic() {
   const { coinsData } = useSelector((state: RootState) => state.infographic);
   const currency = useSelector((state: RootState) => state.currency);
-  const isDark = useSelector((state: RootState) => state.theme.isDark);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -18,12 +18,9 @@ export default function Infographic() {
 
   return (
     <header
-      className={[
-        "flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-fill",
-        `theme-${isDark ? "galaxy" : "glacier"}`,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={GetTheme(
+        "flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-fill"
+      )}
     >
       <ul className="flex justify-center gap-8 w-screen">
         <li className="header-item">

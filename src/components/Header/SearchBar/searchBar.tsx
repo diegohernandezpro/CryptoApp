@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { RootState } from "@/state/store";
-import { useSelector } from "react-redux";
 import { api } from "@/utils/DataRetriever";
 import type { Coin } from "@/utils/DataTypes";
 import SearchResult from "./searchResult";
+import GetTheme, { GetThemeBoolean } from "@/utils/GetTheme";
 
 export default function SearchBar() {
-  const { isDark } = useSelector((state: RootState) => state.theme);
-
   const [searchTerm, setSearch] = useState("");
   const [results, setResults] = useState<Coin[]>([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -52,14 +49,14 @@ export default function SearchBar() {
   };
 
   return (
-    <div className={[].filter(Boolean).join(" ")}>
+    <div className={GetTheme()}>
       <form
         className="canvas-item w-[356px] h-12 gap-3 py-2 px-4"
         onSubmit={handleFormSubmit}
       >
         <img
           src={
-            isDark
+            GetThemeBoolean()
               ? "src/assets/magnifing-glass-galaxy.svg"
               : "src/assets/magnifing-glass-glacier.svg"
           }
