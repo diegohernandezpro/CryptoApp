@@ -7,10 +7,7 @@ export default function Navigation() {
   return (
     <div className="h-12 w-[265px] flex gap-6 ">
       <span
-        onClick={() => {
-          console.log("isHomeActive", isHomeActive);
-          setIsHomeActive(true);
-        }}
+        onClick={() => setIsHomeActive(true)}
         className={GetTheme(
           `w-[110px] nav-item ${
             isHomeActive ? "opacity-100 font-bold" : "opacity-50"
@@ -28,10 +25,7 @@ export default function Navigation() {
         <p>Home</p>
       </span>
       <span
-        onClick={() => {
-          console.log("isHomeActive", isHomeActive);
-          setIsHomeActive(false);
-        }}
+        onClick={() => setIsHomeActive(false)}
         className={GetTheme(
           `w-[131px] nav-item ${
             isHomeActive ? "opacity-50" : "opacity-100 font-bold"

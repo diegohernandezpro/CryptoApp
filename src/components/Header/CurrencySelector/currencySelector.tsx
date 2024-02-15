@@ -11,7 +11,7 @@ export default function CurrencySelector() {
   return (
     <div
       className={GetTheme(
-        "canvas-item flex gap-2 py-3 px-4 justify-around items-center w-[108px] "
+        "canvas-item flex gap-2 py-3 px-4 justify-around items-center w-[108px]"
       )}
     >
       <img
@@ -24,7 +24,7 @@ export default function CurrencySelector() {
         className="w-6 h-6"
       />
       <select
-        className="font-mono appearance-none cursor-pointer bg-skin-base text-header-base"
+        className="font-mono appearance-none cursor-pointer bg-header-muted text-header-base"
         value={currency.currency}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           dispatch(setCurrency(e.target.value))

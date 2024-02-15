@@ -13,44 +13,46 @@
 .theme-galaxy {
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
-    --color-info-fill: #1E1932;
-    
+    --color-info-base: #1F1934;
 
     --color-header-text-base: #ffffff;
     --color-header-text-muted: #D1D1D1;
-
-    --color-header-bg-base: #1E1932;
+    
+    --color-header-bg-base: #14121B;
     --color-header-bg-muted: #191926;
     --color-header-bg-accent: #6161D6;
-
+    
     --color-header-border: #242431
 
+    --color-skin-base: #14121B;
+    
 }
 
 
 .theme-glacier {
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
-    --color-info-fill: #353570;
-
-
+    --color-info-base: #353570;
+    
     --color-header-text-base: #353570;
     --color-header-text-muted: #424286;
-
+    
     --color-header-bg-base: #ffffff;
     --color-header-bg-muted: #CCCCFA;
     --color-header-bg-accent: #6161D6;
-
+    
     --color-header-border: #ffffff;
+
+    --color-skin-base: #F2F5F9
 }
 
 
 @layer components {
 
     .header-info {
-        @apply flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-fill
+        @apply flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-base
     }
-    .header-item {
+    .info-item {
        @apply text-info-base flex justify-between gap-2 items-center
     }
 

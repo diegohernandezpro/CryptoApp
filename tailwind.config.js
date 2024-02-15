@@ -7,9 +7,6 @@ export default {
         spin: "spin 1s linear infinite",
       },
       textColor: {
-        skin: {
-          base: "var(--color-bg-base)",
-        },
         info: {
           base: "var(--color-info-text-base)",
           muted: "var(--color-info-text-muted)",
@@ -22,10 +19,10 @@ export default {
     },
     backgroundColor: {
       skin: {
-        base: "var(--color-bg-base)",
+        base: "var(--color-skin-base)",
       },
       info: {
-        fill: "var(--color-info-fill)",
+        base: "var(--color-info-base)",
       },
       header: {
         base: "var(--color-header-bg-base)",

@@ -20,24 +20,24 @@ export default function Infographic() {
   return (
     <header className={headerCss}>
       <ul className="flex justify-center gap-8 w-screen">
-        <li className="header-item">
+        <li className="info-item">
           <img src={"/src/assets/flash-cricle.svg"} alt="flash-circle" />
           <span className="text-info-muted">Coins</span>
           <span>{coinsData?.numCoins}</span>
         </li>
 
-        <li className="header-item">
+        <li className="info-item">
           <img src={"/src/assets/exchange-icon.svg"} alt="exchange-icon" />
           <span className="text-info-muted">Exchanges</span>
           <span>{coinsData?.numExchange}</span>
         </li>
 
-        <li className="header-item">
+        <li className="info-item">
           <img src={"/src/assets/up-arrow.svg"} alt="bitcoin-icon" />
           <span>{coinsData?.formattedMarketCap}</span>
         </li>
 
-        <li className="header-item">
+        <li className="info-item">
           <span>{coinsData?.formattedCoinVolume}</span>
 
           <Slider
@@ -46,13 +46,13 @@ export default function Infographic() {
           />
         </li>
 
-        <li className="header-item">
+        <li className="info-item">
           <img src={"/src/assets/bitcoin.svg"} alt="bitcoin-icon" />
           <span>{`${coinsData?.formattedBitCap} %`}</span>{" "}
           <Slider percentage={coinsData?.formattedBitCap || 0} name="bitcoin" />
         </li>
 
-        <li className="header-item">
+        <li className="info-item">
           <img src={"/src/assets/etherum.svg"} alt="etherum-icon" />
           <span>{`${coinsData?.formattedEthCap} %`}</span>{" "}
           <Slider
