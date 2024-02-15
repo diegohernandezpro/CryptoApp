@@ -62,6 +62,6 @@
     }
 
     .nav-item {
-        @apply h-12 text-header-base flex justify-center items-center py-3 px-4  gap-[10px] rounded-md
+        @apply h-12 text-header-base flex justify-center items-center py-3 px-4  gap-[10px] rounded-md cursor-pointer
     }
 }
