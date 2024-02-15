@@ -11,7 +11,7 @@ export default function CurrencySelector() {
   return (
     <div
       className={GetTheme(
-        "canvas-item flex gap-2 py-3 px-4 justify-around items-center w-[108px]"
+        "canvas-item flex gap-2 py-3 px-4 justify-around items-center w-[108px] "
       )}
     >
       <img

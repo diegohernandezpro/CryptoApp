@@ -23,9 +23,7 @@
     --color-header-bg-muted: #191926;
     --color-header-bg-accent: #6161D6;
 
-
     --color-header-border: #242431
-    --color-header-border-blend: #6161D6;
 
 }
 
@@ -44,7 +42,6 @@
     --color-header-bg-accent: #6161D6;
 
     --color-header-border: #ffffff;
-    --color-header-border-blend:#ffffff;
 }
 
 
@@ -58,7 +55,7 @@
     }
 
     .canvas-item {
-        @apply flex justify-center items-center border rounded-2xl cursor-pointer bg-header-muted  border-header-base
+        @apply flex justify-center items-center border rounded-md cursor-pointer bg-header-muted border-header-base
     }
 
     .nav-item {

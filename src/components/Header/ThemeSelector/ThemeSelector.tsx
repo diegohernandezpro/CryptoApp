@@ -12,7 +12,7 @@ const ThemeSelector = () => {
 
   return (
     <button
-      className={GetTheme("canvas-item w-12 h-12 p-2.75 gap-2.5")}
+      className={GetTheme("canvas-item w-12 h-12 p-2.75 gap-2.5 rounded-2xl")}
       onClick={() => dispatch(toogleTheme())}
     >
       {GetThemeBoolean() ? (
