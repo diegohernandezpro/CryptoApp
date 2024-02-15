@@ -52,7 +52,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div>
+    <div className={[].filter(Boolean).join(" ")}>
       <form
         className="canvas-item w-[356px] h-12 gap-3 py-2 px-4"
         onSubmit={handleFormSubmit}
