@@ -9,6 +9,7 @@ export default function Infographic() {
   const { coinsData } = useSelector((state: RootState) => state.infographic);
   const currency = useSelector((state: RootState) => state.currency);
   const dispatch = useDispatch<AppDispatch>();
+  const headerCss: string = GetTheme("header-info");
 
   useEffect(() => {
     dispatch(getData());
@@ -17,11 +18,7 @@ export default function Infographic() {
   if (!coinsData) return null;
 
   return (
-    <header
-      className={GetTheme(
-        "flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-fill"
-      )}
-    >
+    <header className={headerCss}>
       <ul className="flex justify-center gap-8 w-screen">
         <li className="header-item">
           <img src={"/src/assets/flash-cricle.svg"} alt="flash-circle" />

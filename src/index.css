@@ -49,11 +49,19 @@
 
 
 @layer components {
+
+    .header-info {
+        @apply flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-fill
+    }
     .header-item {
        @apply text-info-base flex justify-between gap-2 items-center
     }
 
     .canvas-item {
         @apply flex justify-center items-center border rounded-2xl cursor-pointer bg-header-muted  border-header-base
+    }
+
+    .nav-item {
+        @apply h-12 text-header-base flex justify-center items-center py-3 px-4  gap-[10px] rounded-md
     }
 }
