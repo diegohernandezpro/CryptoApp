@@ -37,7 +37,6 @@ export default {
     },
     colors: {},
   },
-
   plugins: [],
 };
 

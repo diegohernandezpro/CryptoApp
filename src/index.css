@@ -1,16 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+/* Define common styles for transitions */
 * {
-    font-family: 'Space Grotesk'  sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.theme-galaxy {
+/* Apply theme styles to the whole app */
+body {
+    background-color: var(--color-skin-base);
+    color: var(--color-info-text-base);
+}
+
+/* Define light theme variables */
+:root.dark {
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
     --color-info-base: #1F1934;
@@ -22,14 +30,15 @@
     --color-header-bg-muted: #191926;
     --color-header-bg-accent: #6161D6;
     
-    --color-header-border: #242431
+    --color-header-border: #242431;
 
     --color-skin-base: #14121B;
-    
+
+
 }
 
-
-.theme-glacier {
+/* Dark theme variables */
+:root {
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
     --color-info-base: #353570;
@@ -43,14 +52,15 @@
     
     --color-header-border: #ffffff;
 
-    --color-skin-base: #F2F5F9
+    --color-skin-base: #ffffff;
+
 }
 
 
 @layer components {
 
     .app-css {
-        @apply bg-skin-base border-[4px] border-header-base
+        @apply h-screen
     }
 
     .header-info {
