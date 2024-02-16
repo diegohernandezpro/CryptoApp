@@ -37,6 +37,14 @@ body {
     
     --color-header-border: #242431;
 
+    /* converter */
+    --color-converter-bg-base: #232336;
+    --color-converter-bg-accent: #6161D6;
+
+    --color-converter-text-base: #ffffff;
+    --color-converter-text-accent: #ffffff;
+
+
 
 
 }
@@ -44,7 +52,7 @@ body {
 /* Dark theme variables */
 :root {
     /* skin */
-    --color-skin-base: #ffffff;
+    --color-skin-base: #F2F5F9;
     /* infographic */
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
@@ -61,15 +69,55 @@ body {
     
     --color-header-border: #ffffff;
 
+    /* converter */
+    --color-converter-bg-base: #ffffff;
+    --color-converter-bg-accent: #B0B0F0;
 
+    --color-converter-text-base: #424286;
+    --color-converter-text-accent: #ffffff;
 
 }
-
 
 @layer components {
 
     .app-css {
-        @apply h-screen
+        @apply flex flex-col justify-center items-center
+    }
+
+    .body-container {
+        @apply flex flex-col w-[1296px] h-[1675px] top-12 gap-[40px] relative
+    }
+
+    .body-wrapper {
+        @apply w-[1296px] h-[1582px] gap-[72px]
+    }
+
+    .graph-container {
+        @apply w-[1296px] h-[694px] gap-[40px] flex flex-col
+    }
+
+    .graph-header {
+        @apply w-[1296px] h-[152px] gap-[24px]
+    }
+
+    .graph-title {
+        @apply w-[1296px] h-[48px] justify-between
+    }
+
+    .graph-paragraph {
+        @apply w-[255px] h-[18px] text-sm text-header-base
+    }
+
+    .graph-card-wrapper {
+        @apply w-[1296px] h-[80px] gap-[8px] flex absolute overflow-x-scroll border-[4px] border-[red]
+    }
+
+    .graph-card-button {
+        @apply h-12 w-12 flex justify-center items-center opacity-80 bg-header-accent rounded-3xl border border-header-base drop-shadow relative top-4 left-[1285px] cursor-pointer hover:opacity-50 hover:drop-shadow-xl hover:border-2
+    }
+
+    .graph-card {
+        @apply w-[252.8px] h-[78px] border border-header-base rounded-md flex justify-between items-center bg-converter-base text-header-base
     }
 
     .header-info {
@@ -86,8 +134,12 @@ body {
     .nav-item {
         @apply h-12 text-header-base flex justify-center items-center py-3 px-4  gap-[10px] rounded-md cursor-pointer
     }
-}
 
-.dark-icon path {
-    stroke: var(--stroke-color); /* Set stroke color for dark theme */
-  }
+    .converter-button {
+        @apply text-converter-base bg-converter-base flex justify-center items-center w-[244px] h-[45px] cursor-pointer py-3 px-4 gap-[10px] rounded-md
+    }
+
+    .converter-button-active {
+        @apply bg-converter-accent text-converter-accent border-header-base shadow-md bg-opacity-50 rounded-lg
+    }
+}

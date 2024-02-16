@@ -15,6 +15,10 @@ export default {
           base: "var(--color-header-text-base)",
           muted: "var(--color-header-text-muted)",
         },
+        converter: {
+          base: "var(--color-converter-text-base)",
+          accent: "var(--color-converter-text-accent)",
+        },
       },
     },
     backgroundColor: {
@@ -26,6 +30,10 @@ export default {
         base: "var(--color-header-bg-base)",
         muted: "var(--color-header-bg-muted)",
         accent: "var(--color-header-bg-accent)",
+      },
+      converter: {
+        base: "var(--color-converter-bg-base)",
+        accent: "var(--color-converter-bg-accent)",
       },
     },
     borderColor: {
