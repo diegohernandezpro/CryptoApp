@@ -49,6 +49,10 @@
 
 @layer components {
 
+    .app-css {
+        @apply bg-skin-base border-[4px] border-header-base
+    }
+
     .header-info {
         @apply flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-base
     }

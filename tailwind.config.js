@@ -18,9 +18,7 @@ export default {
       },
     },
     backgroundColor: {
-      skin: {
-        base: "var(--color-skin-base)",
-      },
+      skin: { base: "var(--color-skin-base)" },
       info: {
         base: "var(--color-info-base)",
       },

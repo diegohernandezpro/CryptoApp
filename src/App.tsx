@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 
 export default function App() {
   return (
-    <div className="h-screen bg-skin-base border-3 border-header-base">
+    <div className="h-screen app-css">
       <Infographic />
       <Header />
     </div>
