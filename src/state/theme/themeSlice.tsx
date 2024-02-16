@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 interface ThemeState {
   isDark: boolean;
@@ -19,5 +21,9 @@ const themeSlice = createSlice({
 });
 
 export const { toogleTheme } = themeSlice.actions;
+
+export const useIsDark = () => {
+  return useSelector((state: RootState) => state.theme.isDark);
+};
 
 export default themeSlice.reducer;

@@ -20,11 +20,12 @@ body {
 :root.dark {
     /* skin */
     --color-skin-base: #14121B;
-
+    
     /* infographic */
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
     --color-info-base: #1F1934;
+    --color-header-stroke: #ffffff;
 
     /* header */
     --color-header-text-base: #ffffff;
@@ -44,11 +45,11 @@ body {
 :root {
     /* skin */
     --color-skin-base: #ffffff;
-
     /* infographic */
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
     --color-info-base: #353570;
+    --color-header-stroke: #353570;
     
     /* header */
     --color-header-text-base: #353570;
@@ -72,7 +73,7 @@ body {
     }
 
     .header-info {
-        @apply flex w-screen h-14 px-[72px] py-4 border-none rounded-md bg-info-base
+        @apply flex w-screen h-14 px-[72px] py-4 border-none bg-info-base
     }
     .info-item {
        @apply text-info-base flex justify-between gap-2 items-center
@@ -86,3 +87,7 @@ body {
         @apply h-12 text-header-base flex justify-center items-center py-3 px-4  gap-[10px] rounded-md cursor-pointer
     }
 }
+
+.dark-icon path {
+    stroke: var(--stroke-color); /* Set stroke color for dark theme */
+  }

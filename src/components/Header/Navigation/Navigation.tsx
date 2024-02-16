@@ -1,5 +1,5 @@
 import { useState } from "react";
-import GetTheme, { GetThemeBoolean } from "@/utils/GetTheme";
+import { useIsDark } from "@/state/theme/themeSlice";
 
 export default function Navigation() {
   const [isHomeActive, setIsHomeActive] = useState(true);
@@ -8,37 +8,33 @@ export default function Navigation() {
     <div className="h-12 w-[265px] flex gap-6 ">
       <span
         onClick={() => setIsHomeActive(true)}
-        className={GetTheme(
-          `w-[110px] nav-item ${
-            isHomeActive ? "opacity-100 font-bold" : "opacity-50"
-          }`
-        )}
+        className={`w-[110px] nav-item ${
+          isHomeActive ? "opacity-100 font-bold" : "opacity-50"
+        }`}
       >
         <img
           src={
-            GetThemeBoolean()
+            useIsDark()
               ? "/src/assets/home-galaxy.svg"
               : "/src/assets/home-glacier.svg"
           }
-          alt="bitcoin-icon"
+          alt="home-icon"
         />
         <p>Home</p>
       </span>
       <span
         onClick={() => setIsHomeActive(false)}
-        className={GetTheme(
-          `w-[131px] nav-item ${
-            isHomeActive ? "opacity-50" : "opacity-100 font-bold"
-          }`
-        )}
+        className={`w-[131px] nav-item ${
+          isHomeActive ? "opacity-50" : "opacity-100 font-bold"
+        }`}
       >
         <img
           src={
-            GetThemeBoolean()
+            useIsDark()
               ? "/src/assets/portfolio-galaxy.svg"
               : "/src/assets/portfolio-glacier.svg"
           }
-          alt="bitcoin-icon"
+          alt="portfolio-icon"
         />
         <p>Portfolio</p>
       </span>

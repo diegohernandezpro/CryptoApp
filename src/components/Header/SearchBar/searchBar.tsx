@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { api } from "@/utils/DataRetriever";
 import type { Coin } from "@/utils/DataTypes";
 import SearchResult from "./searchResult";
-import GetTheme, { GetThemeBoolean } from "@/utils/GetTheme";
+import { useIsDark } from "@/state/theme/themeSlice";
 
 export default function SearchBar() {
   const [searchTerm, setSearch] = useState("");
@@ -49,14 +49,14 @@ export default function SearchBar() {
   };
 
   return (
-    <div className={GetTheme()}>
+    <div>
       <form
         className="canvas-item w-[356px] h-12 gap-3 py-2 px-4"
         onSubmit={handleFormSubmit}
       >
         <img
           src={
-            GetThemeBoolean()
+            useIsDark()
               ? "src/assets/magnifing-glass-galaxy.svg"
               : "src/assets/magnifing-glass-glacier.svg"
           }

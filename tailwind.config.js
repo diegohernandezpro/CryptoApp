@@ -33,6 +33,7 @@ export default {
         base: "var(--color-header-border)",
       },
     },
+
     colors: {},
   },
   plugins: [],
