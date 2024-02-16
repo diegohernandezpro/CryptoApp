@@ -29,8 +29,6 @@ export default {
       },
     },
     borderColor: {
-      skin: {},
-      info: {},
       header: {
         base: "var(--color-header-border)",
       },

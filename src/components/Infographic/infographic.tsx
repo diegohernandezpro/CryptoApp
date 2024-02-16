@@ -3,13 +3,11 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getData } from "@/state/infographic/infographicSlice";
 import { Slider } from "./Slider";
-import GetTheme from "@/utils/GetTheme";
 
 export default function Infographic() {
   const { coinsData } = useSelector((state: RootState) => state.infographic);
   const currency = useSelector((state: RootState) => state.currency);
   const dispatch = useDispatch<AppDispatch>();
-  const headerCss: string = GetTheme("header-info");
 
   useEffect(() => {
     dispatch(getData());
@@ -18,7 +16,7 @@ export default function Infographic() {
   if (!coinsData) return null;
 
   return (
-    <header className={headerCss}>
+    <header className="header-info">
       <ul className="flex justify-center gap-8 w-screen">
         <li className="info-item">
           <img src={"/src/assets/flash-cricle.svg"} alt="flash-circle" />

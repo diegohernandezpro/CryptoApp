@@ -8,12 +8,11 @@ export default function App() {
   const isDark = useSelector((state: RootState) => state.theme.isDark);
 
   useEffect(() => {
-    console.log("reloading app based on theme change isDark: ", isDark);
     document.documentElement.classList.toggle("dark", isDark);
   }, [isDark]);
 
   return (
-    <div className={`app-css`}>
+    <div className="app-css">
       <Infographic />
       <Header />
     </div>

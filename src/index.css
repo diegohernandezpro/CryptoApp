@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 
-/* Define common styles for transitions */
 * {
     font-family: 'Space Grotesk', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -19,10 +18,15 @@ body {
 
 /* Define light theme variables */
 :root.dark {
+    /* skin */
+    --color-skin-base: #14121B;
+
+    /* infographic */
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
     --color-info-base: #1F1934;
 
+    /* header */
     --color-header-text-base: #ffffff;
     --color-header-text-muted: #D1D1D1;
     
@@ -32,17 +36,21 @@ body {
     
     --color-header-border: #242431;
 
-    --color-skin-base: #14121B;
 
 
 }
 
 /* Dark theme variables */
 :root {
+    /* skin */
+    --color-skin-base: #ffffff;
+
+    /* infographic */
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
     --color-info-base: #353570;
     
+    /* header */
     --color-header-text-base: #353570;
     --color-header-text-muted: #424286;
     
@@ -52,7 +60,7 @@ body {
     
     --color-header-border: #ffffff;
 
-    --color-skin-base: #ffffff;
+
 
 }
 
