@@ -1,115 +1,21 @@
-// import { useState } from "react";
+import { useState, useEffect } from "react";
+import { AppDispatch, RootState } from "@/state/store";
+import { useSelector, useDispatch } from "react-redux";
+import { getData } from "@/state/cards/cardsSlice";
 
 export default function Graphs() {
-  // interface Card {
-  //   name: string;
-  //   symbol: string;
-  //   price: number;
-  //   change: number;
-  // }
+  const dispatch = useDispatch<AppDispatch>();
+  const currency = useSelector((state: RootState) => state.currency);
 
-  // interface Cards {
-  //   [key: string]: Card;
-  // }
-
-  // const cards: Cards = {
-  //   bitcoin: {
-  //     name: "Bitcoin",
-  //     symbol: "BTC",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  //   ethereum: {
-  //     name: "Ethereum",
-  //     symbol: "ETH",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  //   tether: {
-  //     name: "Tether",
-  //     symbol: "USDT",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  //   binance: {
-  //     name: "Binance",
-  //     symbol: "BIN",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  //   dogecoin: {
-  //     name: "Dogecoin",
-  //     symbol: "DGC",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  //   a1: {
-  //     name: "test1",
-  //     symbol: "ETH",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  //   a2: {
-  //     name: "test2",
-  //     symbol: "USDT",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  //   a3: {
-  //     name: "test3",
-  //     symbol: "BTC",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  //   a4: {
-  //     name: "test4",
-  //     symbol: "DGC",
-  //     price: 52000,
-  //     change: 2.35,
-  //   },
-  // };
-
-  // const [cardArray, setCardArray] = useState([
-  //   Object.values(cards)[0],
-  //   Object.values(cards)[1],
-  //   Object.values(cards)[2],
-  //   Object.values(cards)[3],
-  //   Object.values(cards)[4],
-  // ]);
+  const { coinsData } = useSelector((state: RootState) => state.cards);
 
   const testArray = [0, 1, 2, 3, 4];
 
-  // const getNextCard = (currentIndex: number) => {
-  //   console.log("🚀 ~ getNextCard ~ currentIndex:", currentIndex);
+  useEffect(() => {
+    dispatch(getData());
+  }, [dispatch, currency]);
 
-  //   const keys = Object.keys(cards);
-  //   // console.log("🚀 ~ getNextCard ~ keys:", keys);
-  //   const nextIndex = (currentIndex + 5) % keys.length;
-  //   // console.log("🚀 ~ getNextCard ~ nextIndex:", nextIndex);
-  //   // console.log("nextCard to Show: ", cards[keys[nextIndex]]);
-  //   return cards[keys[nextIndex]];
-  // };
-
-  // const showNextCard = () => {
-  //   setCardArray((prevCardArray) => {
-  //     console.log("🚀 ~ setCardArray ~ prevCardArray:", prevCardArray);
-  //     console.log("object.values(cards):", Object.values(cards));
-
-  //     const newCardArray = [...prevCardArray];
-  //     const firstCard = newCardArray.shift();
-  //     console.log("🚀 ~ setCardArray ~ firstCard:", firstCard);
-
-  //     if (firstCard === undefined) {
-  //       return null;
-  //     } else {
-  //       console.log("object.values: ", Object.values(cards));
-
-  //       newCardArray.push(getNextCard(Object.values(cards).indexOf(firstCard)));
-  //     }
-
-  //     return newCardArray;
-  //   });
-  // };
+  if (!coinsData) return null;
 
   return (
     <div className="graph-container">

@@ -4,13 +4,16 @@ import FETCHING_STATE from "../fetchingState";
 import { RootState } from "../store";
 
 type Data = {
-  // numCoins: string;
+  // name: string;
+  // symbol: string;
+  // price: number;
+  // percentChange: number;
 };
 
 interface CardState {
   status: string;
   errorMsg: string | null;
-  coinsData: Data | null;
+  coinsData: Data | null; //change data[] if needed.
 }
 
 const initialState: CardState = {
@@ -48,11 +51,13 @@ export const getData = createAsyncThunk(
       "/coins/markets",
       `?vs_currency=${currencyType}&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d`
     );
-    console.log("🚀 ~ getData ~ response", response);
-
     const jsonresponse = JSON.stringify(response);
     const jsonData = JSON.parse(jsonresponse);
     console.log("🚀 ~ jsonData:", jsonData);
+
+    // const cardData = {};
+
+    return {};
   }
 );
 

@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export default function Converter() {
   const [selected, setSelected] = useState("Coins");
-  console.log("🚀 ~ Converter ~ selected:", selected);
 
   const isSelected = (buttonName: string): boolean => {
     return selected === buttonName;
