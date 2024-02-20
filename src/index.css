@@ -109,15 +109,15 @@ body {
     }
 
     .graph-card-wrapper {
-        @apply w-[1296px] h-[80px] gap-[8px] flex absolute overflow-x-scroll border-[4px] border-[red]
+        @apply w-[1296px] h-[80px] gap-[8px] flex absolute overflow-x-scroll
+    }
+
+    .graph-card {
+        @apply min-w-[252.8px] h-[78px] p-4 border border-header-base rounded-md flex justify-between items-center bg-converter-base text-header-base
     }
 
     .graph-card-button {
         @apply h-12 w-12 flex justify-center items-center opacity-80 bg-header-accent rounded-3xl border border-header-base drop-shadow relative top-4 left-[1285px] cursor-pointer hover:opacity-50 hover:drop-shadow-xl hover:border-2
-    }
-
-    .graph-card {
-        @apply w-[252.8px] h-[78px] border border-header-base rounded-md flex justify-between items-center bg-converter-base text-header-base
     }
 
     .header-info {

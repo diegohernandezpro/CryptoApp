@@ -2,18 +2,20 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "@/utils/DataRetriever";
 import FETCHING_STATE from "../fetchingState";
 import { RootState } from "../store";
+import type { DataTable } from "@/utils/DataTypes";
 
-type Data = {
-  // name: string;
-  // symbol: string;
-  // price: number;
-  // percentChange: number;
+type Coin = {
+  image: string;
+  name: string;
+  symbol: string;
+  price: number;
+  percentChange: number;
 };
 
 interface CardState {
   status: string;
   errorMsg: string | null;
-  coinsData: Data | null; //change data[] if needed.
+  coinsData: Coin[] | null;
 }
 
 const initialState: CardState = {
@@ -31,7 +33,7 @@ const cardsSlice = createSlice({
       .addCase(getData.pending, (state) => {
         state.status = FETCHING_STATE.PENDING;
       })
-      .addCase(getData.fulfilled, (state, action: PayloadAction<Data>) => {
+      .addCase(getData.fulfilled, (state, action: PayloadAction<Coin[]>) => {
         state.status = FETCHING_STATE.FULFILLED;
         state.coinsData = action.payload;
       })
@@ -53,11 +55,17 @@ export const getData = createAsyncThunk(
     );
     const jsonresponse = JSON.stringify(response);
     const jsonData = JSON.parse(jsonresponse);
-    console.log("🚀 ~ jsonData:", jsonData);
 
-    // const cardData = {};
-
-    return {};
+    const formatedCoinArray: Coin[] = jsonData.map((coin: DataTable): Coin => {
+      return {
+        image: coin.image,
+        name: coin.name,
+        symbol: coin.symbol,
+        price: coin.current_price,
+        percentChange: coin.price_change_percentage_24h,
+      };
+    });
+    return formatedCoinArray;
   }
 );
 

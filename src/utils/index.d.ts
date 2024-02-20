@@ -3,5 +3,12 @@ declare module "@/utils" {
   export { FetchingStates } from "./FetchingStates";
   export { formatNum } from "./NumberFormatter";
   export { default } from "./LoadingCircle";
-  export { default, GetThemeBoolean } from "./GetTheme";
+  "";
+  export type {
+    Coin,
+    DataTable,
+    DataInfographic,
+    CoinsResponse,
+    TableCoin,
+  } from "./DataTypes";
 }
