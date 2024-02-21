@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -44,7 +44,12 @@ body {
     --color-converter-text-base: #ffffff;
     --color-converter-text-accent: #ffffff;
 
+    /* cards  */
+    --color-card-bg-base: #191925;
+    --color-card-bg-aceent: #6161D6;
 
+    --color-card-text-base: #ffffff;
+    --color-card-text-muted: #D1D1D1;
 
 
 }
@@ -76,6 +81,14 @@ body {
     --color-converter-text-base: #424286;
     --color-converter-text-accent: #ffffff;
 
+    /* cards */
+    --color-card-bg-base: #ffffff;
+    --color-card-bg-aceent: #6161D6;
+
+    --color-card-text-base: #181825;
+    --color-card-text-muted: #424286;
+
+    /* --color-card-text-muted: rgba(255, 255, 255, 0.7); */
 }
 
 @layer components {
@@ -113,11 +126,15 @@ body {
     }
 
     .graph-card {
-        @apply min-w-[252.8px] h-[78px] p-4 border border-header-base rounded-md flex justify-between items-center bg-converter-base text-header-base
+        @apply min-w-[252.8px] h-[78px] p-4 border border-header-base rounded-md flex justify-between items-center text-card-base bg-card-base
     }
 
     .graph-card-button {
         @apply h-12 w-12 flex justify-center items-center opacity-80 bg-header-accent rounded-3xl border border-header-base drop-shadow relative top-4 left-[1285px] cursor-pointer hover:opacity-50 hover:drop-shadow-xl hover:border-2
+    }
+
+    .price-arrow {
+        @apply top-[6.33px] left-[11.33px]
     }
 
     .header-info {

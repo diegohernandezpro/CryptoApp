@@ -19,6 +19,10 @@ export default {
           base: "var(--color-converter-text-base)",
           accent: "var(--color-converter-text-accent)",
         },
+        card: {
+          base: "var(--color-card-text-base)",
+          muted: "var(--color-card-text-muted)",
+        },
       },
     },
     backgroundColor: {
@@ -34,6 +38,10 @@ export default {
       converter: {
         base: "var(--color-converter-bg-base)",
         accent: "var(--color-converter-bg-accent)",
+      },
+      card: {
+        base: "var(--color-card-bg-base)",
+        accent: "var(--color-card-bg-accent)",
       },
     },
     borderColor: {
