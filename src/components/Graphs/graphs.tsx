@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import { AppDispatch, RootState } from "@/state/store";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,8 +8,6 @@ export default function Graphs() {
   const dispatch = useDispatch<AppDispatch>();
   const currency = useSelector((state: RootState) => state.currency);
   const { coinsData } = useSelector((state: RootState) => state.cards);
-  const cards = useSelector((state: RootState) => state.cards);
-  console.log("🚀 ~ Graphs ~ cards:", cards);
   const [startIndex, setStartIndex] = useState(0);
   const [clickedIndices, setClickedIndices] = useState<number[]>([]);
 
@@ -51,14 +48,20 @@ export default function Graphs() {
         </div>
         <ul className="graph-card-wrapper">
           {dispalyedCoins.map((coin, index) => (
-            <li key={index} className="graph-card">
-              <input
-                type="checkbox"
-                className="border-2 border-card-muted w-4 h-4"
-                checked={clickedIndices.includes(index)}
-                onChange={() => handleChange(index)}
-              />
-              <label>
+            <li key={index}>
+              <label
+                className={`graph-card ${
+                  clickedIndices.includes(index) ? "graph-card-checked" : ""
+                }`}
+                htmlFor={`checkbox-${index}`}
+              >
+                <input
+                  id={`checkbox-${index}`}
+                  type="checkbox"
+                  className="hidden"
+                  checked={clickedIndices.includes(index)}
+                  onChange={() => handleChange(index)}
+                />
                 <img
                   src={coin.image}
                   className="h-8 w-8"

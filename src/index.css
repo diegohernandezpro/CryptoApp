@@ -46,10 +46,12 @@ body {
 
     /* cards  */
     --color-card-bg-base: #191925;
-    --color-card-bg-aceent: #6161D6;
+    --color-card-bg-accent: #6161D6;
 
     --color-card-text-base: #ffffff;
     --color-card-text-muted: #D1D1D1;
+    --color-card-text-checked-base: #ffffff;
+    --color-card-text-checked-muted: #D1D1D1;
 
     /* electric */
     --color-electric-text-base: #01F1E3;
@@ -87,16 +89,19 @@ body {
 
     /* cards */
     --color-card-bg-base: #ffffff;
-    --color-card-bg-aceent: #6161D6;
+    --color-card-bg-accent: #6161D6;
 
     --color-card-text-base: #181825;
     --color-card-text-muted: #424286;
+    --color-card-text-checked-base: #ffffff;
+    --color-card-text-checked-muted: rgba(255, 255, 255, 0.7);
+;
+    
 
     /* electric */
     --color-electric-text-base: #00B1A7;
     --color-electric-text-muted: #FE2264;
 
-    /* --color-card-text-muted: rgba(255, 255, 255, 0.7); */
 }
 
 @layer components {
@@ -135,6 +140,10 @@ body {
 
     .graph-card {
         @apply min-w-[252.8px] h-[78px] p-4 border border-header-base rounded-md flex justify-between items-center text-card-base bg-card-base
+    }
+
+    .graph-card-checked {
+        @apply bg-card-accent text-card-baseChecked
     }
 
     .graph-card-button {

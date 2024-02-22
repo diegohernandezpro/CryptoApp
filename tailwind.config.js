@@ -22,6 +22,8 @@ export default {
         card: {
           base: "var(--color-card-text-base)",
           muted: "var(--color-card-text-muted)",
+          baseChecked: "var(--color-card-text-checked-muted)",
+          mutedChecked: "var(--color-card-text-checked-muted)",
         },
         electric: {
           base: "var(--color-electric-text-base)",
