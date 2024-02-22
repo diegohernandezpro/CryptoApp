@@ -62,7 +62,6 @@ export default function SearchBar() {
           }
           alt="currency-selector-icon"
           className="w-4 h-4 top-[2.08px] left-[2.08px]"
-          //   onClick={handleImageSubmit}
         />
 
         <input
