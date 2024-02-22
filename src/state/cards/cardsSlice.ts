@@ -28,7 +28,7 @@ const initialState: CardState = {
 };
 
 const cardsSlice = createSlice({
-  name: "cards",
+  name: "graphCards",
   initialState,
   reducers: {
     isActive: (

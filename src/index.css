@@ -7,7 +7,7 @@
 
 * {
     font-family: 'Space Grotesk', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
 
 /* Apply theme styles to the whole app */
@@ -139,11 +139,21 @@ body {
     }
 
     .graph-card {
-        @apply min-w-[252.8px] h-[78px] p-4 border border-header-base rounded-md flex justify-between items-center text-card-base bg-card-base
+        @apply min-w-[252.8px] h-[78px] p-4 border border-header-base rounded-md flex justify-between items-center text-card-base bg-card-base hover:cursor-pointer
     }
 
+    .graph-card-price {
+        @apply w-[96px] h-[18px] text-sm text-card-muted
+    }
+
+    .graph-card-price-checked {
+        @apply w-[96px] h-[18px] text-sm text-card-mutedChecked
+    }
+
+
     .graph-card-checked {
-        @apply bg-card-accent text-card-baseChecked
+        @apply bg-card-accent text-card-baseChecked shadow-lg
+
     }
 
     .graph-card-button {

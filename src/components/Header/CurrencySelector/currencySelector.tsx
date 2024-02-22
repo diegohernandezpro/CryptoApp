@@ -20,7 +20,7 @@ export default function CurrencySelector() {
         className="w-6 h-6"
       />
       <select
-        className="font-mono appearance-none cursor-pointer bg-header-muted text-header-base"
+        className="font-mono appearance-none cursor-pointer bg-header-muted text-header-base outline-none bordeer-none"
         value={currency.currency}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           dispatch(setCurrency(e.target.value))

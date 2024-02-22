@@ -51,7 +51,7 @@ export default function Graphs() {
             <li key={index}>
               <label
                 className={`graph-card ${
-                  clickedIndices.includes(index) ? "graph-card-checked" : ""
+                  coin.clicked ? "graph-card-checked" : ""
                 }`}
                 htmlFor={`checkbox-${index}`}
               >
@@ -59,7 +59,7 @@ export default function Graphs() {
                   id={`checkbox-${index}`}
                   type="checkbox"
                   className="hidden"
-                  checked={clickedIndices.includes(index)}
+                  checked={coin.clicked}
                   onChange={() => handleChange(index)}
                 />
                 <img
@@ -72,7 +72,11 @@ export default function Graphs() {
                     {`${coin.name} (${coin.symbol.toUpperCase()})`}
                   </div>
                   <div className="w-[164px] h-[18px] gap-[8px] flex justify-center items-center">
-                    <span className="w-[96px] h-[18px] text-sm text-card-muted ">
+                    <span
+                      className={`graph-card-price ${
+                        coin.clicked ? "graph-card-price-checked" : ""
+                      }`}
+                    >
                       {`${coin.price} ${currency.currency.toUpperCase()}`}
                     </span>
                     <span className="-[60px] h-[16px] gap-[4px] flex">
