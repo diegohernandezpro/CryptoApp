@@ -51,6 +51,10 @@ body {
     --color-card-text-base: #ffffff;
     --color-card-text-muted: #D1D1D1;
 
+    /* electric */
+    --color-electric-text-base: #01F1E3;
+    --color-electric-text-muted: #FE2264;
+
 
 }
 
@@ -87,6 +91,10 @@ body {
 
     --color-card-text-base: #181825;
     --color-card-text-muted: #424286;
+
+    /* electric */
+    --color-electric-text-base: #00B1A7;
+    --color-electric-text-muted: #FE2264;
 
     /* --color-card-text-muted: rgba(255, 255, 255, 0.7); */
 }

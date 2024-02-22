@@ -23,6 +23,10 @@ export default {
           base: "var(--color-card-text-base)",
           muted: "var(--color-card-text-muted)",
         },
+        electric: {
+          base: "var(--color-electric-text-base)",
+          muted: "var(--color-electric-text-muted)",
+        },
       },
     },
     backgroundColor: {

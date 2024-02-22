@@ -3,13 +3,16 @@ import { api } from "@/utils/DataRetriever";
 import FETCHING_STATE from "../fetchingState";
 import { RootState } from "../store";
 import type { DataTable } from "@/utils/DataTypes";
+import { formatPercentage, formatPrice } from "@/utils/NumberFormatter";
 
-type Coin = {
+export type Coin = {
   image: string;
   name: string;
   symbol: string;
-  price: number;
+  price: string;
   percentChange: number;
+  formattedPercentChange: string;
+  clicked?: boolean;
 };
 
 interface CardState {
@@ -27,7 +30,17 @@ const initialState: CardState = {
 const cardsSlice = createSlice({
   name: "cards",
   initialState,
-  reducers: {},
+  reducers: {
+    isActive: (
+      state,
+      action: PayloadAction<{ index: number; clicked: boolean }>
+    ) => {
+      const { index, clicked } = action.payload;
+      if (state.coinsData && state.coinsData[index]) {
+        state.coinsData[index].clicked = clicked;
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getData.pending, (state) => {
@@ -35,7 +48,10 @@ const cardsSlice = createSlice({
       })
       .addCase(getData.fulfilled, (state, action: PayloadAction<Coin[]>) => {
         state.status = FETCHING_STATE.FULFILLED;
-        state.coinsData = action.payload;
+        state.coinsData = action.payload.map((coin, index) => ({
+          ...coin,
+          clicked: index === 0,
+        }));
       })
       .addCase(getData.rejected, (state) => {
         state.status = FETCHING_STATE.REJECTED;
@@ -61,12 +77,18 @@ export const getData = createAsyncThunk(
         image: coin.image,
         name: coin.name,
         symbol: coin.symbol,
-        price: coin.current_price,
+        price: formatPrice(coin.current_price),
         percentChange: coin.price_change_percentage_24h,
+        formattedPercentChange: formatPercentage(
+          coin.price_change_percentage_24h,
+          false
+        ),
       };
     });
     return formatedCoinArray;
   }
 );
+
+export const { isActive } = cardsSlice.actions;
 
 export default cardsSlice.reducer;
