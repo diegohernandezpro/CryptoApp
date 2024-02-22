@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 
 * {
     font-family: 'Space Grotesk', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
 
 /* Apply theme styles to the whole app */
@@ -37,6 +37,25 @@ body {
     
     --color-header-border: #242431;
 
+    /* converter */
+    --color-converter-bg-base: #232336;
+    --color-converter-bg-accent: #6161D6;
+
+    --color-converter-text-base: #ffffff;
+    --color-converter-text-accent: #ffffff;
+
+    /* cards  */
+    --color-card-bg-base: #191925;
+    --color-card-bg-accent: #6161D6;
+
+    --color-card-text-base: #ffffff;
+    --color-card-text-muted: #D1D1D1;
+    --color-card-text-checked-base: #ffffff;
+    --color-card-text-checked-muted: #D1D1D1;
+
+    /* electric */
+    --color-electric-text-base: #01F1E3;
+    --color-electric-text-muted: #FE2264;
 
 
 }
@@ -44,7 +63,7 @@ body {
 /* Dark theme variables */
 :root {
     /* skin */
-    --color-skin-base: #ffffff;
+    --color-skin-base: #F2F5F9;
     /* infographic */
     --color-info-text-base: #ffffff;
     --color-info-text-muted: #D1D1D1;
@@ -61,15 +80,88 @@ body {
     
     --color-header-border: #ffffff;
 
+    /* converter */
+    --color-converter-bg-base: #ffffff;
+    --color-converter-bg-accent: #B0B0F0;
 
+    --color-converter-text-base: #424286;
+    --color-converter-text-accent: #ffffff;
+
+    /* cards */
+    --color-card-bg-base: #ffffff;
+    --color-card-bg-accent: #B0B0F0;
+
+    --color-card-text-base: #181825;
+    --color-card-text-muted: #424286;
+    --color-card-text-checked-base: #ffffff;
+    --color-card-text-checked-muted: rgba(255, 255, 255, 0.7);
+;
+    
+
+    /* electric */
+    --color-electric-text-base: #00B1A7;
+    --color-electric-text-muted: #FE2264;
 
 }
-
 
 @layer components {
 
     .app-css {
-        @apply h-screen
+        @apply flex flex-col justify-center items-center
+    }
+
+    .body-container {
+        @apply flex flex-col w-[1296px] h-[1675px] top-12 gap-[40px] relative
+    }
+
+    .body-wrapper {
+        @apply w-[1296px] h-[1582px] gap-[72px]
+    }
+
+    .graph-container {
+        @apply w-[1296px] h-[694px] gap-[40px] flex flex-col
+    }
+
+    .graph-header {
+        @apply w-[1296px] h-[152px] gap-[24px]
+    }
+
+    .graph-title {
+        @apply w-[1296px] h-[48px] justify-between
+    }
+
+    .graph-paragraph {
+        @apply w-[255px] h-[18px] text-sm text-header-base
+    }
+
+    .graph-card-wrapper {
+        @apply w-[1296px] h-[80px] gap-[8px] flex absolute overflow-x-scroll
+    }
+
+    .graph-card {
+        @apply min-w-[252.8px] h-[78px] p-4 border border-header-base rounded-md flex justify-between items-center text-card-base bg-card-base hover:cursor-pointer
+    }
+
+    .graph-card-price {
+        @apply w-[96px] h-[18px] text-sm text-card-muted
+    }
+
+    .graph-card-price-checked {
+        @apply w-[96px] h-[18px] text-sm text-card-mutedChecked
+    }
+
+
+    .graph-card-checked {
+        @apply bg-card-accent text-card-baseChecked shadow-lg
+
+    }
+
+    .graph-card-button {
+        @apply h-12 w-12 flex justify-center items-center opacity-80 bg-header-accent rounded-3xl border border-header-base drop-shadow relative top-4 left-[1285px] cursor-pointer hover:opacity-50 hover:drop-shadow-xl hover:border-2
+    }
+
+    .price-arrow {
+        @apply top-[6.33px] left-[11.33px]
     }
 
     .header-info {
@@ -86,8 +178,12 @@ body {
     .nav-item {
         @apply h-12 text-header-base flex justify-center items-center py-3 px-4  gap-[10px] rounded-md cursor-pointer
     }
-}
 
-.dark-icon path {
-    stroke: var(--stroke-color); /* Set stroke color for dark theme */
-  }
+    .converter-button {
+        @apply text-converter-base bg-converter-base flex justify-center items-center w-[244px] h-[45px] cursor-pointer py-3 px-4 gap-[10px] rounded-md
+    }
+
+    .converter-button-active {
+        @apply bg-converter-accent text-converter-accent border-header-base shadow-md bg-opacity-50 rounded-lg
+    }
+}

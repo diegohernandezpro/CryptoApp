@@ -1,6 +1,5 @@
 import { Coin } from "@/utils/DataTypes";
 import LoadingCircle from "@/utils/LoadingCricle";
-// import { LoadingCircle } from "@/utils/LoadingCricle";
 
 const SearchResult = ({
   results,

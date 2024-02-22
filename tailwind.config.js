@@ -15,6 +15,20 @@ export default {
           base: "var(--color-header-text-base)",
           muted: "var(--color-header-text-muted)",
         },
+        converter: {
+          base: "var(--color-converter-text-base)",
+          accent: "var(--color-converter-text-accent)",
+        },
+        card: {
+          base: "var(--color-card-text-base)",
+          muted: "var(--color-card-text-muted)",
+          baseChecked: "var(--color-card-text-checked-muted)",
+          mutedChecked: "var(--color-card-text-checked-muted)",
+        },
+        electric: {
+          base: "var(--color-electric-text-base)",
+          muted: "var(--color-electric-text-muted)",
+        },
       },
     },
     backgroundColor: {
@@ -27,6 +41,14 @@ export default {
         muted: "var(--color-header-bg-muted)",
         accent: "var(--color-header-bg-accent)",
       },
+      converter: {
+        base: "var(--color-converter-bg-base)",
+        accent: "var(--color-converter-bg-accent)",
+      },
+      card: {
+        base: "var(--color-card-bg-base)",
+        accent: "var(--color-card-bg-accent)",
+      },
     },
     borderColor: {
       header: {
@@ -38,24 +60,3 @@ export default {
   },
   plugins: [],
 };
-
-//in process of not having to write isDark everytime there is theme change.
-
-// "prim-purple-blue": " #6A6A9F",
-//       "prim-blueish-black": "#191932",
-//       "prim-blue": "023AFF",
-//       "prim-birches": "#01F1E3",
-//       "grad1-purple": "#7517F8",
-//       "grad1-pink": "#E323FF",
-//       "grad2-blue": "#02A4FF",
-//       "grad2-purple": "#7D40FF",
-//       "grad3-light-blue": "#4DA1FF",
-//       "grad3-teal": "#4DFFDF",
-//       "sec-yellow": "#FFA63F",
-//       "sec-electric-green": "#5EFF5A",
-//       "sec-blue-blacksih": "#191925",
-//       "sec-red": "#FF2D2E",
-//       "sec-purple": "#991BFA",
-//       "sec-birches": "#01F1E3",
-//       "sec-black": "#05050F",
-//       "theme-dark-border": "#232336",

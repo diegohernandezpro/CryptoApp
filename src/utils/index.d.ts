@@ -1,7 +1,14 @@
 declare module "@/utils" {
   export { api } from "./DataRetriever";
   export { FetchingStates } from "./FetchingStates";
-  export { formatNum } from "./NumberFormatter";
+  export { formatNum, formatPercentage, formatPrice } from "./NumberFormatter";
   export { default } from "./LoadingCircle";
-  export { default, GetThemeBoolean } from "./GetTheme";
+  "";
+  export type {
+    Coin,
+    DataTable,
+    DataInfographic,
+    CoinsResponse,
+    TableCoin,
+  } from "./DataTypes";
 }
