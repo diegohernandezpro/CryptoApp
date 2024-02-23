@@ -25,6 +25,11 @@ export default {
           baseChecked: "var(--color-card-text-checked-muted)",
           mutedChecked: "var(--color-card-text-checked-muted)",
         },
+        graph: {
+          base: "var(--color-graph-text-base)",
+          muted: "var(--color-graph-text-muted)",
+          soft: "var(--color-graph-text-soft)",
+        },
         electric: {
           base: "var(--color-electric-text-base)",
           muted: "var(--color-electric-text-muted)",
@@ -48,6 +53,10 @@ export default {
       card: {
         base: "var(--color-card-bg-base)",
         accent: "var(--color-card-bg-accent)",
+      },
+      graph: {
+        base: "var(--color-graph-bg-base)",
+        muted: "var(--color-graph-bg-muted)",
       },
     },
     borderColor: {

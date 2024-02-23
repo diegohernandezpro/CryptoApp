@@ -23,10 +23,12 @@ export const formatPercentage = (
 
 export const formatPrice = (price: number): string => {
   let priceString: string = "";
+
   if (price !== null && price.toString().length < 3) {
     priceString = `${price}.00`;
   } else {
     priceString = `${numeral(price).format("0,0.00")}`;
   }
+
   return priceString;
 };

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -53,6 +53,14 @@ body {
     --color-card-text-checked-base: #ffffff;
     --color-card-text-checked-muted: #D1D1D1;
 
+    /* graph */
+    --color-graph-bg-base: #191932;
+    --color-graph-bg-muted: #1E1932;
+
+    --color-graph-text-base: #fff;
+    --color-graph-text-muted: #D1D1D1;
+    --color-graph-text-soft: #B9B9BA;
+
     /* electric */
     --color-electric-text-base: #01F1E3;
     --color-electric-text-muted: #FE2264;
@@ -95,6 +103,17 @@ body {
     --color-card-text-muted: #424286;
     --color-card-text-checked-base: #ffffff;
     --color-card-text-checked-muted: rgba(255, 255, 255, 0.7);
+
+    /* graph */
+    --color-graph-bg-base: #ffffff;
+    --color-graph-bg-muted: #ffffff;
+
+
+    --color-graph-text-base: #181825;
+    --color-graph-text-muted: #191932;
+    --color-graph-text-soft: #424286;
+
+
 ;
     
 
@@ -158,6 +177,14 @@ body {
 
     .graph-card-button {
         @apply h-12 w-12 flex justify-center items-center opacity-80 bg-header-accent rounded-3xl border border-header-base drop-shadow relative top-4 left-[1285px] cursor-pointer hover:opacity-50 hover:drop-shadow-xl hover:border-2
+    }
+
+    .graph-body-container {
+        @apply w-[1296px] h-[404px] gap-[32px] flex justify-center items-center
+    }
+
+    .graph-body-wrapper {
+        @apply w-[632px] h-[404px] gap-6 p-6 rounded-2xl first:bg-graph-base bg-graph-muted
     }
 
     .price-arrow {

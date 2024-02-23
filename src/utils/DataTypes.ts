@@ -45,13 +45,13 @@ type DataTable = {
 };
 
 type Coin = {
-  id: string;
+  image: string;
   name: string;
-  api_symbol: string;
-  large: string;
-  thumb: string;
   symbol: string;
-  market_cap_rank: number | null;
+  price: string;
+  percentChange: number;
+  formattedPercentChange: string;
+  clicked?: boolean;
 };
 
 type CoinsResponse = {

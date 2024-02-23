@@ -4,16 +4,7 @@ import FETCHING_STATE from "../fetchingState";
 import { RootState } from "../store";
 import type { DataTable } from "@/utils/DataTypes";
 import { formatPercentage, formatPrice } from "@/utils/NumberFormatter";
-
-export type Coin = {
-  image: string;
-  name: string;
-  symbol: string;
-  price: string;
-  percentChange: number;
-  formattedPercentChange: string;
-  clicked?: boolean;
-};
+import type { Coin } from "@/utils/DataTypes";
 
 interface CardState {
   status: string;

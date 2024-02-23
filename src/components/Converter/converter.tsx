@@ -27,6 +27,4 @@ export default function Converter() {
       </button>
     </div>
   );
-
-  //   bg-converter-accent text-converter-accent border-header-base shadow-md bg-opacity-50 rounded-lg
 }
