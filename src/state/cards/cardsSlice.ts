@@ -67,7 +67,7 @@ export const getData = createAsyncThunk(
       return {
         image: coin.image,
         name: coin.name,
-        symbol: coin.symbol,
+        symbol: coin.symbol.toUpperCase(),
         price: formatPrice(coin.current_price),
         percentChange: coin.price_change_percentage_24h,
         formattedPercentChange: formatPercentage(

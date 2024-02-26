@@ -61,6 +61,12 @@ body {
     --color-graph-text-muted: #D1D1D1;
     --color-graph-text-soft: #B9B9BA;
 
+    --color-graph-selector-bg-base: rgba(35, 35, 54, 1);
+    --color-graph-selector-bg: rgba(120, 120, 250, 1);
+    --color-graph-selector-bg-checked: rgba(97, 97, 214, 0.5);
+
+    --color-graph-shadow: rgba(120, 120, 250, 0.15);
+    
     /* electric */
     --color-electric-text-base: #01F1E3;
     --color-electric-text-muted: #FE2264;
@@ -113,8 +119,11 @@ body {
     --color-graph-text-muted: #191932;
     --color-graph-text-soft: #424286;
 
+    --color-graph-selector-bg-base: rgba(204, 204, 250, 0.4);
+    --color-graph-selector-bg: rgba(120, 120, 250, 1);
+    --color-graph-selector-bg-checked: rgba(97, 97, 214, 0.5);
 
-;
+    --color-graph-shadow: rgba(120, 120, 250, 0.15);
     
 
     /* electric */
@@ -171,7 +180,7 @@ body {
 
 
     .graph-card-checked {
-        @apply bg-card-accent text-card-baseChecked shadow-lg
+        @apply bg-card-accent text-card-baseChecked shadow-custom
 
     }
 
@@ -185,6 +194,18 @@ body {
 
     .graph-body-wrapper {
         @apply w-[632px] h-[404px] gap-6 p-6 rounded-2xl first:bg-graph-base bg-graph-muted
+    }
+
+    .graph-selector-container {
+        @apply w-[463px] h-[42px] rounded-md flex justify-between items-center p-1 gap-2 bg-graph-selector
+    }
+
+    .graph-selector-element {
+        @apply w-[58px] h-[34px] rounded-[4px] text-base flex justify-center items-center px-5 py-2 gap-3 cursor-pointer
+    }
+
+    .graph-selector-element-checked {
+        @apply border border-graph-base bg-graph-checked shadow-custom
     }
 
     .price-arrow {
@@ -211,6 +232,6 @@ body {
     }
 
     .converter-button-active {
-        @apply bg-converter-accent text-converter-accent border-header-base shadow-md bg-opacity-50 rounded-lg
+        @apply bg-converter-accent text-converter-accent border-header-base shadow-[md] bg-opacity-50 rounded-lg
     }
 }

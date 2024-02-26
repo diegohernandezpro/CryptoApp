@@ -57,14 +57,21 @@ export default {
       graph: {
         base: "var(--color-graph-bg-base)",
         muted: "var(--color-graph-bg-muted)",
+        selector: "var(--color-graph-selector-bg-base)",
+        checked: "var(--color-graph-selector-bg-checked)",
       },
     },
     borderColor: {
       header: {
         base: "var(--color-header-border)",
       },
+      graph: {
+        base: "var(--color-graph-selector-bg)",
+      },
     },
-
+    boxShadow: {
+      custom: "4px 4px 20px 8px var(--color-graph-shadow)",
+    },
     colors: {},
   },
   plugins: [],
