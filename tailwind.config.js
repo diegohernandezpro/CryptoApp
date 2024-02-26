@@ -29,6 +29,8 @@ export default {
           base: "var(--color-graph-text-base)",
           muted: "var(--color-graph-text-muted)",
           soft: "var(--color-graph-text-soft)",
+          selector: "var(--color-graph-selector-text-base)",
+          checked: "var(--color-graph-selector-text-checked)",
         },
         electric: {
           base: "var(--color-electric-text-base)",

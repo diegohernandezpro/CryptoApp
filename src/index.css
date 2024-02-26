@@ -64,6 +64,8 @@ body {
     --color-graph-selector-bg-base: rgba(35, 35, 54, 1);
     --color-graph-selector-bg: rgba(120, 120, 250, 1);
     --color-graph-selector-bg-checked: rgba(97, 97, 214, 0.5);
+    --color-graph-selector-text-base: rgba(167, 167, 204, 1);
+    --color-graph-selector-text-checked: rgba(228, 228, 240, 1);
 
     --color-graph-shadow: rgba(120, 120, 250, 0.15);
     
@@ -122,6 +124,9 @@ body {
     --color-graph-selector-bg-base: rgba(204, 204, 250, 0.4);
     --color-graph-selector-bg: rgba(120, 120, 250, 1);
     --color-graph-selector-bg-checked: rgba(97, 97, 214, 0.5);
+    --color-graph-selector-text-base: rgba(66, 66, 134, 1);
+    --color-graph-selector-text-checked: rgba(24, 24, 37, 1);
+    
 
     --color-graph-shadow: rgba(120, 120, 250, 0.15);
     
@@ -178,7 +183,6 @@ body {
         @apply w-[96px] h-[18px] text-sm text-card-mutedChecked
     }
 
-
     .graph-card-checked {
         @apply bg-card-accent text-card-baseChecked shadow-custom
 
@@ -201,11 +205,11 @@ body {
     }
 
     .graph-selector-element {
-        @apply w-[58px] h-[34px] rounded-[4px] text-base flex justify-center items-center px-5 py-2 gap-3 cursor-pointer
+        @apply w-[58px] h-[34px] rounded-[4px] text-base flex justify-center items-center px-5 py-2 gap-3 cursor-pointer font-normal text-graph-selector
     }
 
     .graph-selector-element-checked {
-        @apply border border-graph-base bg-graph-checked shadow-custom
+        @apply border border-graph-base bg-graph-checked shadow-custom font-medium text-graph-checked
     }
 
     .price-arrow {
