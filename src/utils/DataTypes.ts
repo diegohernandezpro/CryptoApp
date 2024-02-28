@@ -54,11 +54,41 @@ type Coin = {
   clicked?: boolean;
 };
 
+type TimeFrame = {
+  displayString: string;
+  timeFrame: string;
+  days: string;
+  interval: string;
+};
+
+type TimeOptionValue = [string, string | "max", "daily" | "hourly"];
+
+type TimeOptions = {
+  [key: string]: TimeOptionValue;
+};
+
 type CoinsResponse = {
   coins: Coin[];
 };
 
-type ApiType = DataInfographic | CoinsResponse | DataTable;
+type DataGraph = {
+  prices: number[];
+  pricesLabels: number[];
+  volumes: number[];
+  volumeLabels: number[];
+  avgPrice: string;
+  avgVolume: string;
+};
 
-export type { Coin, DataTable, DataInfographic, CoinsResponse };
+type ApiType = DataInfographic | CoinsResponse | DataTable | DataGraph;
+
+export type {
+  Coin,
+  DataTable,
+  DataInfographic,
+  CoinsResponse,
+  DataGraph,
+  TimeFrame,
+  TimeOptions,
+};
 export default ApiType;

@@ -55,7 +55,7 @@ export const getData = createAsyncThunk(
     const jsonresponse = JSON.stringify(response);
     const jsonData = JSON.parse(jsonresponse);
     const { currency, symbol } = (getState() as RootState).currency;
-    const currencyType = currency.toLocaleLowerCase();
+    const currencyType = currency.toLowerCase();
 
     const {
       active_cryptocurrencies: numCoins,

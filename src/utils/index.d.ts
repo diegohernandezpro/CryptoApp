@@ -1,7 +1,12 @@
 declare module "@/utils" {
   export { api } from "./DataRetriever";
   export { FetchingStates } from "./FetchingStates";
-  export { formatNum, formatPercentage, formatPrice } from "./NumberFormatter";
+  export {
+    formatNum,
+    formatPercentage,
+    formatPrice,
+    formatVolume,
+  } from "./NumberFormatter";
   export { default } from "./LoadingCircle";
   "";
   export type {
@@ -10,5 +15,7 @@ declare module "@/utils" {
     DataInfographic,
     CoinsResponse,
     TableCoin,
+    TimeFrame,
+    TimeOptions,
   } from "./DataTypes";
 }
