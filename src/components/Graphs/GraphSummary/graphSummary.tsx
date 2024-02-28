@@ -5,6 +5,7 @@ import { type Coin } from "@/utils/DataTypes";
 
 export default function GraphSummary({ volume = false }: { volume?: boolean }) {
   let content: JSX.Element | null = null;
+  const { graphTimeFrame } = useSelector((state: RootState) => state.graph);
   const { coinsData } = useSelector((state: RootState) => state.cards);
   const { symbol } = useSelector((state: RootState) => state.currency);
   const [selectedCoins, setSelectedCoins] = useState<Coin[]>([]);
@@ -35,11 +36,11 @@ export default function GraphSummary({ volume = false }: { volume?: boolean }) {
       content = (
         <>
           <span className="w-[160px] h-[24px] text-graph-muted">
-            {"Volume 24h"}
+            {`Volume ${graphTimeFrame.timeFrame}`}
           </span>
           <span className="w-[160px] h-[68px] flex flex-col gap-[16px]">
             <div className="w-[158px] h-[28px] font-bold leading-7 text-[28px] text-graph-base">
-              volumeprice
+              {`Volume price`}
             </div>
             <div className="w-[160px] h-[24px] text-graph-soft font-normal text-base leading-6">
               {todayDate}

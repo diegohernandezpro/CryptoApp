@@ -16,12 +16,13 @@ import infographicReducer from "./infographic/infographicSlice";
 import currencyReducer from "./currency/currencySlice";
 import themeReducer from "./theme/themeSlice";
 import cardReducer from "./cards/cardsSlice";
+import graphReducer from "./graph/graphSlice";
 
 const persistConfig = {
   key: "root",
   storage,
   version: 1,
-  whitelist: ["currency", "theme", "cards"],
+  whitelist: ["currency", "theme", "cards", "graph"],
 };
 
 const rootReducer = combineReducers({
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
   infographic: infographicReducer,
   theme: themeReducer,
   cards: cardReducer,
+  graph: graphReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

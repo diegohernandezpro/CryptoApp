@@ -236,6 +236,6 @@ body {
     }
 
     .converter-button-active {
-        @apply bg-converter-accent text-converter-accent border-header-base shadow-[md] bg-opacity-50 rounded-lg
+        @apply bg-converter-accent text-converter-accent border-header-base shadow-custom bg-opacity-50 rounded-lg
     }
 }
