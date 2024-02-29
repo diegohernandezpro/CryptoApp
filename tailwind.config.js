@@ -62,6 +62,10 @@ export default {
         selector: "var(--color-graph-selector-bg-base)",
         checked: "var(--color-graph-selector-bg-checked)",
       },
+      chart: {
+        start: "var(--color-chart-line-start)",
+        end: "var(--color-chart-line-end)",
+      },
     },
     borderColor: {
       header: {

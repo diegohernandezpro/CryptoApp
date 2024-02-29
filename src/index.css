@@ -68,6 +68,14 @@ body {
     --color-graph-selector-text-checked: rgba(228, 228, 240, 1);
 
     --color-graph-shadow: rgba(120, 120, 250, 0.15);
+
+    /* charts */
+
+    --color-chart-line-start: rgba(116, 116, 242, 0.6);
+    --color-chart-line-end:rgba(116, 116, 242, 0.01);
+
+    --color-chart-bar-start:rgba(157, 98, 217, 1);
+    --color-chart-bar-end:rgba(179, 116, 242, 0.01);
     
     /* electric */
     --color-electric-text-base: #01F1E3;
@@ -197,7 +205,12 @@ body {
     }
 
     .graph-body-wrapper {
-        @apply w-[632px] h-[404px] gap-6 p-6 rounded-2xl first:bg-graph-base bg-graph-muted
+        @apply w-[632px] h-[404px] gap-6 p-6 rounded-xl first:bg-graph-base bg-graph-muted
+         flex flex-col
+    }
+
+    .chart-wrapper {
+        @apply w-[584px] h-[216px] gap-2
     }
 
     .graph-selector-container {
