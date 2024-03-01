@@ -76,6 +76,14 @@ body {
 
     --color-chart-bar-start:rgba(157, 98, 217, 1);
     --color-chart-bar-end:rgba(179, 116, 242, 0.01);
+
+    /* table */
+
+    --color-table-text-base: rgba(209, 209, 209, 1);
+    --color-table-bg-base: #191925; 
+
+    --color-table-text-base: #FFFFFF;
+    --color-table-text-muted: #D1D1D1;
     
     /* electric */
     --color-electric-text-base: #01F1E3;
@@ -137,6 +145,23 @@ body {
     
 
     --color-graph-shadow: rgba(120, 120, 250, 0.15);
+
+    /* charts */
+
+    --color-chart-line-start: rgba(116, 116, 242, 0.6);
+    --color-chart-line-end:rgba(116, 116, 242, 0.01);
+
+    --color-chart-bar-start:rgba(157, 98, 217, 1);
+    --color-chart-bar-end:rgba(179, 116, 242, 0.01);
+
+    /* table */
+
+    --color-table-text-base: rgba(66, 66, 134, 1);
+    --color-table-bg-base: #FFFFFF; 
+
+    --color-table-text-base: #232336;
+    --color-table-text-muted: #424286;
+
     
 
     /* electric */
@@ -156,7 +181,7 @@ body {
     }
 
     .body-wrapper {
-        @apply w-[1296px] h-[1582px] gap-[72px]
+        @apply w-[1296px] h-[1582px] gap-[72px] flex flex-col
     }
 
     .graph-container {
@@ -250,5 +275,21 @@ body {
 
     .converter-button-active {
         @apply bg-converter-accent text-converter-accent border-header-base shadow-custom bg-opacity-50 rounded-lg
+    }
+
+    .table-header {
+        @apply text-table-base w-[1296px] h-[50px] px-4 py-5 gap-5 flex flex-row justify-center items-center text-sm font-normal leading-[17.86px] 
+    }
+
+    .table-element {
+        @apply w-[1296px] h-[77px] p-5 rounded-xl gap-5 bg-table-base flex justify-start items-center
+    }
+
+    .table-price-element {
+        @apply w-[72px] h-[16px] gap-1 flex flex-row
+    }
+
+    .table-price-element-text {
+        @apply w-[72px] h-[16px] gap-1 leading-4 text-sm text-electric-base flex justify-center items-center
     }
 }

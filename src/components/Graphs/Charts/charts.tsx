@@ -58,7 +58,7 @@ export default function Chart({ chartType }: { chartType: "bar" | "line" }) {
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           if (chartType === "line") {
             gradient.addColorStop(0, colors.lineStart);
-            gradient.addColorStop(0.8, colors.lineEnd);
+            gradient.addColorStop(0.6, colors.lineEnd);
           } else {
             gradient.addColorStop(0, colors.barStart);
             gradient.addColorStop(0.6, colors.barEnd);

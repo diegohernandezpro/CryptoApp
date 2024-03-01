@@ -32,6 +32,10 @@ export default {
           selector: "var(--color-graph-selector-text-base)",
           checked: "var(--color-graph-selector-text-checked)",
         },
+        table: {
+          base: "var(--color-table-text-base)",
+          muted: "var(--color-table-text-muted)",
+        },
         electric: {
           base: "var(--color-electric-text-base)",
           muted: "var(--color-electric-text-muted)",
@@ -65,6 +69,9 @@ export default {
       chart: {
         start: "var(--color-chart-line-start)",
         end: "var(--color-chart-line-end)",
+      },
+      table: {
+        base: "var(--color-table-bg-base)",
       },
     },
     borderColor: {

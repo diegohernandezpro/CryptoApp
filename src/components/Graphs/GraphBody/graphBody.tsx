@@ -2,7 +2,7 @@ import GraphSummary from "../GraphSummary/graphSummary";
 import Charts from "../Charts/charts";
 export default function GraphBody() {
   return (
-    <div className="graph-body-container ">
+    <div className="graph-body-container">
       <span className="graph-body-wrapper">
         <GraphSummary />
         <Charts chartType="line" />

@@ -7,7 +7,7 @@ export default function AppName() {
         alt="logo"
       />
       <span className="w-[101px] h-[25px] top-[8px] left-[49px] font-bold leading-6 text-xl text-header-base">
-        CryptoApp
+        DigitGo
       </span>
     </div>
   );
