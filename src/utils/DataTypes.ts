@@ -49,9 +49,23 @@ type Coin = {
   name: string;
   symbol: string;
   price: string;
-  percentChange: number;
-  formattedPercentChange: string;
+  percentChange?: number;
+  percentChange1h?: number;
+  percentChange24h?: number;
+  percentChange7d?: number;
+  formattedPercentChange?: string;
+  formattedpercentChange1h?: string;
+  formattedpercentChange24h?: string;
+  formattedpercentChange7d?: string;
+  totalSupply?: string;
+  rank?: number;
+  circulatingSupply?: string;
+  marketCap?: string;
+  totalVolume?: string;
   clicked?: boolean;
+  sparkline?: number[];
+  marketCapVsVolume?: number;
+  cirtulatingVsTotalSupply?: number;
 };
 
 type TimeFrame = {
@@ -80,6 +94,16 @@ type DataGraph = {
   avgVolume: string;
 };
 
+type TableSearchType = {
+  vs_currency: string;
+  order: string;
+  per_page: number;
+  page: number;
+  sparkline: boolean;
+};
+
+type SearchType = string | TableSearchType;
+
 type ApiType = DataInfographic | CoinsResponse | DataTable | DataGraph;
 
 export type {
@@ -90,5 +114,6 @@ export type {
   DataGraph,
   TimeFrame,
   TimeOptions,
+  SearchType,
 };
 export default ApiType;

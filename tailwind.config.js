@@ -37,8 +37,8 @@ export default {
           muted: "var(--color-table-text-muted)",
         },
         electric: {
-          base: "var(--color-electric-text-base)",
-          muted: "var(--color-electric-text-muted)",
+          base: "var(--color-electric-text-positive)",
+          muted: "var(--color-electric-text-negative)",
         },
       },
     },

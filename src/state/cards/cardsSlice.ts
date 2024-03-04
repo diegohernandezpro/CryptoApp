@@ -51,7 +51,7 @@ const cardsSlice = createSlice({
 });
 
 export const getData = createAsyncThunk(
-  "graphCards/getData",
+  "cards/getData",
   async (_, { getState }) => {
     const { currency } = (getState() as RootState).currency;
     const currencyType = currency.toLocaleLowerCase();

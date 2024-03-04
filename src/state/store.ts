@@ -17,6 +17,7 @@ import currencyReducer from "./currency/currencySlice";
 import themeReducer from "./theme/themeSlice";
 import cardReducer from "./cards/cardsSlice";
 import graphReducer from "./graph/graphSlice";
+import tableReducer from "./table/tableSlice";
 
 const persistConfig = {
   key: "root",
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   theme: themeReducer,
   cards: cardReducer,
   graph: graphReducer,
+  table: tableReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

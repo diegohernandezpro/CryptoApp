@@ -86,8 +86,8 @@ body {
     --color-table-text-muted: #D1D1D1;
     
     /* electric */
-    --color-electric-text-base: #01F1E3;
-    --color-electric-text-muted: #FE2264;
+    --color-electric-text-positive: #01F1E3;
+    --color-electric-text-negative: #FE2264;
 
 
 }
@@ -165,8 +165,8 @@ body {
     
 
     /* electric */
-    --color-electric-text-base: #00B1A7;
-    --color-electric-text-muted: #FE2264;
+    --color-electric-text-positive: #00B1A7;
+    --color-electric-text-negative: #FE2264;
 
 }
 
@@ -286,10 +286,10 @@ body {
     }
 
     .table-price-element {
-        @apply w-[72px] h-[16px] gap-1 flex flex-row
+        @apply w-[72px] h-[16px] gap-1 flex flex-row justify-center items-center
     }
 
     .table-price-element-text {
-        @apply w-[72px] h-[16px] gap-1 leading-4 text-sm text-electric-base flex justify-center items-center
+        @apply w-[40px] h-[16px] gap-1 leading-4 text-sm text-electric-base flex justify-center items-center
     }
 }

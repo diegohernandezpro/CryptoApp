@@ -6,6 +6,8 @@ declare module "@/utils" {
     formatPercentage,
     formatPrice,
     formatVolume,
+    formatSliderPrice,
+    formatSparklineData,
   } from "./NumberFormatter";
   export { default } from "./LoadingCircle";
   "";
@@ -17,5 +19,6 @@ declare module "@/utils" {
     TableCoin,
     TimeFrame,
     TimeOptions,
+    SearchType,
   } from "./DataTypes";
 }

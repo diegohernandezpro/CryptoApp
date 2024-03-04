@@ -21,14 +21,35 @@ export const formatPercentage = (
   return numeral(Math.abs(percentage)).format("0.00") + "%";
 };
 
-export const formatPrice = (price: number): string => {
+export const formatPrice = (price: number, tablePrice?: boolean): string => {
   let priceString: string = "";
 
-  if (price !== null && price.toString().length < 3) {
-    priceString = `${price}.00`;
+  if (tablePrice) {
+    if (price !== null && price.toString().length < 3) {
+      priceString = `${price}.00`;
+    } else if (price !== null && price < 1) {
+      priceString = `${numeral(price).format("0.00000")}`;
+    } else {
+      priceString = `${numeral(price).format("0,0.00")}`;
+    }
   } else {
-    priceString = `${numeral(price).format("0,0.00")}`;
+    if (price !== null && price.toString().length < 3) {
+      priceString = `${price}.00`;
+    } else {
+      priceString = `${numeral(price).format("0,0.00")}`;
+    }
   }
 
-  return priceString;
+  return `${priceString}`;
+};
+
+export const formatSliderPrice = (price: number | string): string => {
+  if (typeof price === "string" && price === "∞") {
+    return "∞";
+  }
+  return `${numeral(price).format("0[.]0 a").toUpperCase()}`;
+};
+
+export const formatSparklineData = (data: number[]): number[] => {
+  return data.filter((_, index) => index % 8 === 0);
 };

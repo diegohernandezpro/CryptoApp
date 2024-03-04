@@ -1,7 +1,8 @@
 import axios from "axios";
 import type ApiType from "./DataTypes";
+import type { SearchType } from "./DataTypes";
 
-export async function api(url: string, search?: string) {
+export async function api(url: string, search?: SearchType) {
   const base = "https://api.coingecko.com/api/v3";
   const fullUrl = `${base}${url}${search || ""}`;
 
