@@ -21,8 +21,15 @@ export default function App() {
         <Header />
       </span>
       <div className="body-container">
+        {/* <Routes>
+          <Route exact="true" path="/" element={<CoinList />} />
+          <Route path="/coin/:id" element={<CoinPage />} />
+          <Route exact="true" path="/portfolio" element={<Portfolio />} />
+          <Route exact="true" path="/search" element={<SearchPage />} />
+          <Route path="*" element={<ErrorAPICallPage />} />
+        </Routes> */}
         <Converter />
-        <div className="body-wrapper">
+        <div className="body-wrapper ">
           <Graphs />
           <CoinTable />
         </div>

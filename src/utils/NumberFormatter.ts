@@ -33,10 +33,12 @@ export const formatPrice = (price: number, tablePrice?: boolean): string => {
       priceString = `${numeral(price).format("0,0.00")}`;
     }
   } else {
-    if (price !== null && price.toString().length < 3) {
-      priceString = `${price}.00`;
+    if (price !== null && price < 1) {
+      priceString = `${numeral(price).format("0.0000")}`;
+    } else if (price !== null && price === 1) {
+      priceString = `${numeral(price).format("0.00")}`;
     } else {
-      priceString = `${numeral(price).format("0,0.00")}`;
+      priceString = `${numeral(price).format("0,0")}`;
     }
   }
 

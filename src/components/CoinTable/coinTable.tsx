@@ -15,7 +15,7 @@ export default function CoinTable() {
   }, [dispatch]);
 
   return (
-    <div className="w-[1296px] h-[816px] gap-2 flex flex-col">
+    <div className="w-[1296px] h-[816px] gap-2 overflow-auto flex flex-col mb-8">
       <TableHeader />
       {table.coinsData?.map((coin: Coin) => (
         <TableRow key={coin.rank} coin={coin} />

@@ -5,22 +5,27 @@ export default function Slider({
   color: string;
   percent: number | undefined;
 }) {
-  console.log("🚀 ~ percent:", percent);
-
   if (!percent) {
     return null;
   }
 
+  const colorOpaque = color + "80";
+
   return (
-    <div className="w-[228px] h-[6px] rounded-sm absolute">
+    <div className="w-[228px] h-[6px] rounded-sm">
       <div
-        className={`w-[228px] h-[6px] rounded-sm top-[20px] opacity-50 bottom-0 left-0 absolute `}
-        style={{ backgroundColor: color }}
-      ></div>
-      <div
-        className={`h-[6px] rounded-sm top-[20px] relative bottom-0 left-0 `}
-        style={{ width: `${percent * 228}px`, backgroundColor: color }}
-      ></div>
+        className={`w-[228px] h-[6px] rounded-sm top-[20px]`}
+        style={{ backgroundColor: colorOpaque }}
+      >
+        <div
+          className={`h-[6px] rounded-sm top-[20px `}
+          style={{
+            width: `${percent * 228}px`,
+            maxWidth: "228px",
+            backgroundColor: color,
+          }}
+        ></div>
+      </div>
     </div>
   );
 }

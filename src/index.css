@@ -201,7 +201,11 @@ body {
     }
 
     .graph-card-wrapper {
-        @apply w-[1296px] h-[80px] gap-[8px] flex absolute overflow-x-scroll
+        @apply w-[1296px] h-[80px] gap-[8px] flex absolute
+    }
+
+    .card-button-wrapper {
+        @apply w-[1296px] h-[80px] gap-[8px] flex flex-row absolute
     }
 
     .graph-card {
@@ -209,7 +213,7 @@ body {
     }
 
     .graph-card-price {
-        @apply w-[96px] h-[18px] text-sm text-card-muted
+        @apply w-[86px] h-[18px] text-sm text-card-muted overflow-hidden
     }
 
     .graph-card-price-checked {
@@ -222,7 +226,11 @@ body {
     }
 
     .graph-card-button {
-        @apply h-12 w-12 flex justify-center items-center opacity-80 bg-header-accent rounded-3xl border border-header-base drop-shadow relative top-4 left-[1285px] cursor-pointer hover:opacity-50 hover:drop-shadow-xl hover:border-2
+        @apply h-12 w-12 flex justify-center items-center opacity-80 bg-header-accent rounded-3xl border border-header-base drop-shadow relative top-[70px] left-[1200px] cursor-pointer hover:opacity-50 hover:drop-shadow-xl hover:border-2
+    }
+
+    .graph-card-button-reverse {
+        @apply h-12 w-12 flex justify-center items-center opacity-80 bg-header-accent rounded-3xl border border-header-base drop-shadow relative top-[70px] left-[1200px] cursor-pointer hover:opacity-50 hover:drop-shadow-xl hover:border-2 z-20 rotate-180
     }
 
     .graph-body-container {
