@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import CoinList from "@/pages/CoinList";
 import CoinPage from "@/pages/CoinPage";
 import Portfolio from "@/pages/Portfolio";
+import ConverterPage from "@/pages/ConverterPage";
 
 export default function App() {
   const isDark = useSelector((state: RootState) => state.theme.isDark);
@@ -23,6 +24,7 @@ export default function App() {
       </span>
       <Routes>
         <Route path="/" element={<CoinList />} />
+        <Route path="/converter" element={<ConverterPage />} />
         <Route path="/coin/:id" element={<CoinPage />} />
         <Route path="/portfolio" element={<Portfolio />} />
         {/* <Route exact={true} path="/search" element={<SearchPage />} />

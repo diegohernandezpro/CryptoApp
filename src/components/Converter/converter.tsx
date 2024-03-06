@@ -1,30 +1,26 @@
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Converter() {
-  const [selected, setSelected] = useState("Coins");
-
-  const isSelected = (buttonName: string): boolean => {
-    return selected === buttonName;
-  };
-
   return (
     <div className="w-[506px] h-[53px] rounded-md p-1 flex bg-header-muted">
-      <button
-        onClick={() => setSelected("Coins")}
-        className={`${
-          isSelected("Coins") ? "converter-button-active " : ""
-        } converter-button`}
+      <NavLink
+        to={"/"}
+        className={({ isActive }) =>
+          isActive ? "converter-button-active" : "converter-button"
+        }
+        end
       >
         Coins
-      </button>
-      <button
-        onClick={() => setSelected("Converter")}
-        className={`${
-          isSelected("Converter") ? "converter-button-active " : ""
-        } converter-button px-8`}
+      </NavLink>
+      <NavLink
+        to={"/converter"}
+        className={({ isActive }) =>
+          isActive ? "converter-button-active" : "converter-button px-8"
+        }
+        end
       >
         Converter
-      </button>
+      </NavLink>{" "}
     </div>
   );
 }

@@ -282,7 +282,7 @@ body {
     }
 
     .converter-button-active {
-        @apply bg-converter-accent text-converter-accent border-header-base shadow-custom bg-opacity-50 rounded-lg
+        @apply bg-converter-accent text-converter-accent flex justify-center items-center w-[244px] h-[45px] border-header-base shadow-custom bg-opacity-50 rounded-lg cursor-pointer py-3 px-4 gap-[10px]
     }
 
     .table-header {
