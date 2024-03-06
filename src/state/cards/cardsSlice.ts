@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "@/utils/DataRetriever";
 import FETCHING_STATE from "../fetchingState";
+import {useSelector} from "react-redux";
 import { RootState } from "../store";
 import type { DataTable } from "@/utils/DataTypes";
 import { formatPercentage, formatPrice } from "@/utils/NumberFormatter";
@@ -81,5 +82,9 @@ export const getData = createAsyncThunk(
 );
 
 export const { isActive } = cardsSlice.actions;
+
+export const useCards = () = {
+  return useSelector((state: RootState) => state.cards);
+}
 
 export default cardsSlice.reducer;

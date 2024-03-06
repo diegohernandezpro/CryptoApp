@@ -1,13 +1,15 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 interface CurrencyState {
-    currency: string,
-    symbol: string,
+  currency: string;
+  symbol: string;
 }
 
 const initialState: CurrencyState = {
-    currency: "USD",
-    symbol: "$",
-  };
+  currency: "USD",
+  symbol: "$",
+};
 
 enum SYMBOLS {
   USD = "$",
@@ -21,7 +23,7 @@ const currencySlice = createSlice({
   name: "currency",
   initialState,
   reducers: {
-    setCurrency(state,  action: PayloadAction<string>) {
+    setCurrency(state, action: PayloadAction<string>) {
       state.currency = action.payload;
       state.symbol = SYMBOLS[action.payload as keyof typeof SYMBOLS] || "";
     },
@@ -29,5 +31,9 @@ const currencySlice = createSlice({
 });
 
 export const { setCurrency } = currencySlice.actions;
+
+export const useCurrency = () => {
+  return useSelector((state: RootState) => state.currency);
+};
 
 export default currencySlice.reducer;

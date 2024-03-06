@@ -50,7 +50,7 @@ body {
     --color-converter-card-bg-base: #191932;
     --color-converter-card-bg-muted: #1E1932;
     --color-converter-card-text-base: #ffffff;
-
+    --color-converter-card-border: #fff; 
     
     /* cards  */
     --color-card-bg-base: #191925;
@@ -135,7 +135,7 @@ body {
     --color-converter-card-bg-base: #FFFFFF;
     --color-converter-card-bg-muted: #FFFFFF;
     --color-converter-card-text-base: #353570;
-
+    --color-converter-card-border: #353570; 
     
 
     /* cards */
@@ -310,7 +310,7 @@ body {
     }
 
     .converter-card {
-        @apply w-[636px] h-[200px] rounded-2xl p-6 flex flex-col gap-[40px] first:bg-converter-cardBase bg-converter-cardMuted
+        @apply w-[636px] h-[200px] rounded-2xl p-6 flex flex-col gap-[40px] first:bg-converter-cardBase bg-converter-cardMuted hover:cursor-pointer hover:shadow-custom
     }
 
     .table-header {

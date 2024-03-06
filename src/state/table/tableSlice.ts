@@ -9,6 +9,7 @@ import {
   formatSparklineData,
 } from "@/utils/NumberFormatter";
 import type { DataTable, Coin } from "@/utils/DataTypes";
+import { useSelector } from "react-redux";
 
 interface TableState {
   status: string;
@@ -91,5 +92,9 @@ export const getData = createAsyncThunk(
     return formatedCoinArray;
   }
 );
+
+export const useTable = () => {
+  return useSelector((state: RootState) => state.table);
+};
 
 export default tableSlice.reducer;

@@ -86,6 +86,9 @@ export default {
       graph: {
         base: "var(--color-graph-selector-bg)",
       },
+      converter: {
+        base: "var(--color-converter-border)",
+      },
     },
     boxShadow: {
       custom: "4px 4px 20px 8px var(--color-graph-shadow)",

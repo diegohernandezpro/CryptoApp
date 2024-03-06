@@ -1,12 +1,12 @@
-import { AppDispatch, RootState } from "@/state/store";
-import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "@/state/store";
+import { useDispatch } from "react-redux";
 import { toogleTheme } from "@/state/theme/themeSlice";
 import { useEffect } from "react";
+import { useIsDark } from "@/state";
 
 const ThemeSelector = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const isDark: boolean = useSelector((state: RootState) => state.theme.isDark);
-
+  const isDark = useIsDark();
   useEffect(() => {}, [isDark]);
 
   return (

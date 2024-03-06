@@ -1,18 +1,23 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setCurrency } from "@/state/currency/currencySlice";
-import { RootState, AppDispatch } from "@/state/store";
+import { useDispatch } from "react-redux";
+import { setCurrency, useCurrency } from "@/state/currency/currencySlice.tsx";
+import { AppDispatch } from "@/state/store";
 import { useIsDark } from "@/state/theme/themeSlice";
 
 export default function CurrencySelector() {
   const dispatch = useDispatch<AppDispatch>();
-  const currency = useSelector((state: RootState) => state.currency);
+  const currency = useCurrency();
+  const isDark = useIsDark();
+
+  // const handleClick = () => {
+  //   console.log("currency element clicked");
+  // };
 
   return (
-    <div className="canvas-item flex gap-2 py-3 px-4 justify-around items-center w-[108px]">
+    <div className="canvas-item flex gap-2 py-3 px-4 justify-around items-center w-[108px] hover:shadow-custom">
       <img
         src={
-          useIsDark()
+          isDark
             ? "src/assets/currency-icon-galaxy.svg"
             : "src/assets/currency-icon-glacier.svg"
         }
@@ -20,7 +25,7 @@ export default function CurrencySelector() {
         className="w-6 h-6"
       />
       <select
-        className="font-mono appearance-none cursor-pointer bg-header-muted text-header-base outline-none bordeer-none"
+        className="font-mono appearance-none cursor-pointer bg-header-muted text-header-base outline-none   w-[108px]"
         value={currency.currency}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           dispatch(setCurrency(e.target.value))
@@ -34,7 +39,7 @@ export default function CurrencySelector() {
       </select>
       <img
         src={
-          useIsDark()
+          isDark
             ? "src/assets/down-arrow-currency-galaxy.svg"
             : "src/assets/down-arrow-currency-glacier.svg"
         }

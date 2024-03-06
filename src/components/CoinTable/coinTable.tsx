@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, AppDispatch } from "../../state/store";
-import { getData } from "../../state/table/tableSlice";
+import { getTableData, RootState, AppDispatch } from "@/state";
 import TableHeader from "./TableHeader/tableHeader";
 import TableRow from "./TableRow/tableRow";
 import type { Coin } from "@/utils/DataTypes";
@@ -11,7 +10,7 @@ export default function CoinTable() {
   const table = useSelector((state: RootState) => state.table);
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(getTableData());
   }, [dispatch]);
 
   return (

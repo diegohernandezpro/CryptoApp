@@ -13,7 +13,7 @@ import {
 } from "redux-persist";
 
 import infographicReducer from "./infographic/infographicSlice";
-import currencyReducer from "./currency/currencySlice";
+import currencyReducer from "./currency/currencySlice.tsx";
 import themeReducer from "./theme/themeSlice";
 import cardReducer from "./cards/cardsSlice";
 import graphReducer from "./graph/graphSlice";
