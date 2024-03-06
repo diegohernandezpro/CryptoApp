@@ -1,1 +1,1 @@
-export { default } from "./Infographic.tsx";
+export { default as Infographic } from "./infographic";

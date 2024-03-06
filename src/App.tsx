@@ -2,12 +2,8 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "./state/store";
-import Infographic from "@/components/Infographic";
-import Header from "@/components/Header";
-import CoinList from "@/pages/CoinList";
-import CoinPage from "@/pages/CoinPage";
-import Portfolio from "@/pages/Portfolio";
-import ConverterPage from "@/pages/ConverterPage";
+import { Header, Infographic } from "@/components";
+import { CoinList, CoinPage, Portfolio, ConverterPage } from "@/pages";
 
 export default function App() {
   const isDark = useSelector((state: RootState) => state.theme.isDark);

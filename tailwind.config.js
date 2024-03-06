@@ -18,6 +18,9 @@ export default {
         converter: {
           base: "var(--color-converter-text-base)",
           accent: "var(--color-converter-text-accent)",
+          bodyBase: "var(--color-converter-body-text-base)",
+          bodyMuted: "var(--color-converter-body-text-muted)",
+          cardBase: "var(--color-converter-card-text-base)",
         },
         card: {
           base: "var(--color-card-text-base)",
@@ -55,6 +58,8 @@ export default {
       converter: {
         base: "var(--color-converter-bg-base)",
         accent: "var(--color-converter-bg-accent)",
+        cardBase: "var(--color-converter-card-bg-base)",
+        cardMuted: "var(--color-converter-card-bg-muted)",
       },
       card: {
         base: "var(--color-card-bg-base)",

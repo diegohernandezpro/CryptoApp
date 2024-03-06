@@ -1,1 +1,1 @@
-export { default } from "./converterPage";
+export { default as ConverterPage } from "./converterPage";

@@ -1,1 +1,1 @@
-export { default } from "./coinTable";
+export { default as CoinTable } from "./coinTable";

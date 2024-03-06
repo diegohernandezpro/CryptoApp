@@ -44,6 +44,14 @@ body {
     --color-converter-text-base: #ffffff;
     --color-converter-text-accent: #ffffff;
 
+    --color-converter-body-text-base: #ffffff;
+    --color-converter-body-text-muted: #9E9E9E;
+
+    --color-converter-card-bg-base: #191932;
+    --color-converter-card-bg-muted: #1E1932;
+    --color-converter-card-text-base: #ffffff;
+
+    
     /* cards  */
     --color-card-bg-base: #191925;
     --color-card-bg-accent: #6161D6;
@@ -84,6 +92,8 @@ body {
 
     --color-table-text-base: #FFFFFF;
     --color-table-text-muted: #D1D1D1;
+
+    
     
     /* electric */
     --color-electric-text-positive: #01F1E3;
@@ -118,6 +128,15 @@ body {
 
     --color-converter-text-base: #424286;
     --color-converter-text-accent: #ffffff;
+
+    --color-converter-body-text-base: #424286;
+    --color-converter-body-text-muted: #42428680;
+
+    --color-converter-card-bg-base: #FFFFFF;
+    --color-converter-card-bg-muted: #FFFFFF;
+    --color-converter-card-text-base: #353570;
+
+    
 
     /* cards */
     --color-card-bg-base: #ffffff;
@@ -155,14 +174,11 @@ body {
     --color-chart-bar-end:rgba(179, 116, 242, 0.01);
 
     /* table */
-
     --color-table-text-base: rgba(66, 66, 134, 1);
     --color-table-bg-base: #FFFFFF; 
 
     --color-table-text-base: #232336;
     --color-table-text-muted: #424286;
-
-    
 
     /* electric */
     --color-electric-text-positive: #00B1A7;
@@ -283,6 +299,18 @@ body {
 
     .converter-button-active {
         @apply bg-converter-accent text-converter-accent flex justify-center items-center w-[244px] h-[45px] border-header-base shadow-custom bg-opacity-50 rounded-lg cursor-pointer py-3 px-4 gap-[10px]
+    }
+
+    .converter-page {
+        @apply flex flex-col w-[1296px] h-[817px] top-12 gap-[40px] relative 
+    }
+
+    .converter-body {
+        @apply w-[1296px] h-[724px] gap-[70px] flex flex-col
+    }
+
+    .converter-card {
+        @apply w-[636px] h-[200px] rounded-2xl p-6 flex flex-col gap-[40px] first:bg-converter-cardBase bg-converter-cardMuted
     }
 
     .table-header {

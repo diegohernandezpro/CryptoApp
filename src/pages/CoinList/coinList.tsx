@@ -1,11 +1,9 @@
-import Converter from "@/components/Converter";
-import Graphs from "@/components/Graphs";
-import CoinTable from "@/components/CoinTable";
+import { ConverterNav, Graphs, CoinTable } from "@/components";
 
 export default function CoinList() {
   return (
     <div className="body-container">
-      <Converter />
+      <ConverterNav />
       <div className="body-wrapper ">
         <Graphs />
         <CoinTable />

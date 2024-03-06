@@ -1,9 +1,10 @@
-import Converter from "@/components/Converter";
+import { ConverterBody, ConverterNav } from "@/components";
 
 export default function ConverterPage() {
   return (
-    <div className="body-container">
-      <Converter />
+    <div className="converter-page">
+      <ConverterNav />
+      <ConverterBody />
     </div>
   );
 }

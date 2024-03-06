@@ -1,1 +1,1 @@
-export { default } from "./coinPage";
+export { default as CoinPage } from "./coinPage";
