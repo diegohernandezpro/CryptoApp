@@ -9,7 +9,7 @@ export default function Card({
   coin,
 }: {
   cardType: "buy" | "sell";
-  coin?: Coin;
+  coin: Coin | null;
 }) {
   const currency = useCurrency();
   const isDark = useIsDark();
@@ -59,7 +59,11 @@ export default function Card({
             )}
           </div>
           <div className="h-[16px] text-[20px] leading-[16px] font-medium flex justify-center items-center">
-            amount
+            <input
+              type="text"
+              placeholder="0.00"
+              className="flex outline-none bg-converter-cardBase text-[20px] leading-[16px] font-medium text-converter-cardBase text-right"
+            />
           </div>
         </div>
         <div className="w-[588px] h-[40px] flex flex-row gap-[10px] justify-between items-center text-converter-cardBase p-2 border-t-[1px] border-converter-base">
@@ -70,7 +74,7 @@ export default function Card({
       </div>
       {results && (
         <div className="z-10">
-          <SearchResult />
+          <SearchResult cardType={cardType} />
         </div>
       )}
     </div>

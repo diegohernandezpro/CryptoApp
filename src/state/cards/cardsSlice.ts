@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "@/utils/DataRetriever";
 import FETCHING_STATE from "../fetchingState";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import type { DataTable } from "@/utils/DataTypes";
 import { formatPercentage, formatPrice } from "@/utils/NumberFormatter";
@@ -11,18 +11,32 @@ interface CardState {
   status: string;
   errorMsg: string | null;
   coinsData: Coin[] | null;
+  converter: {
+    from: Coin | null;
+    to: Coin | null;
+  };
 }
 
 const initialState: CardState = {
   status: FETCHING_STATE.IDLE,
   errorMsg: null,
   coinsData: null,
+  converter: {
+    from: null,
+    to: null,
+  },
 };
 
 const cardsSlice = createSlice({
   name: "graphCards",
   initialState,
   reducers: {
+    setConverterFrom: (state, action: PayloadAction<Coin>) => {
+      state.converter.from = action.payload;
+    },
+    setConverterTo: (state, action: PayloadAction<Coin>) => {
+      state.converter.to = action.payload;
+    },
     isActive: (
       state,
       action: PayloadAction<{ index: number; clicked: boolean }>
@@ -81,10 +95,11 @@ export const getData = createAsyncThunk(
   }
 );
 
-export const { isActive } = cardsSlice.actions;
+export const { isActive, setConverterFrom, setConverterTo } =
+  cardsSlice.actions;
 
-export const useCards = () = {
+export const useCards = () => {
   return useSelector((state: RootState) => state.cards);
-}
+};
 
 export default cardsSlice.reducer;

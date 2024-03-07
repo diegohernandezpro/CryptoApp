@@ -1,10 +1,12 @@
-// import { useSelector, useDispatch } from "react-redux";
-// import { setSearchTerm } from "@/state/converter/converterSlice";
-// import { AppDispatch } from "@/state/store";
+import { useDispatch } from "react-redux";
+import { AppDispatch, useCards } from "@/state";
 import Card from "./card";
 
 export default function ConverterBody() {
-  // const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>();
+  const cards = useCards();
+  const converterFrom = cards.converter.from;
+  const converterTo = cards.converter.to;
 
   return (
     <div className="converter-body">
@@ -18,8 +20,8 @@ export default function ConverterBody() {
           </span>
         </div>
         <div className="w-[1296px] h-[200px] gap-[24px] flex flex-row">
-          <Card cardType="buy" />
-          <Card cardType="sell" />
+          <Card cardType="buy" coin={converterFrom} />
+          <Card cardType="sell" coin={converterTo} />
         </div>
       </span>
       <span className="w-[1296px] h-[375px] gap-[40px] border-2 border-[yellow]"></span>
