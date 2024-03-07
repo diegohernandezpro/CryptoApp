@@ -55,3 +55,7 @@ export const formatSliderPrice = (price: number | string): string => {
 export const formatSparklineData = (data: number[]): number[] => {
   return data.filter((_, index) => index % 8 === 0);
 };
+
+export const formatAmount = (amount: string): string => {
+  return `${numeral(amount).format("0,0")}`;
+};

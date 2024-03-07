@@ -1,9 +1,7 @@
-import { useDispatch } from "react-redux";
-import { AppDispatch, useCards } from "@/state";
+import { useCards } from "@/state";
 import Card from "./card";
 
 export default function ConverterBody() {
-  const dispatch = useDispatch<AppDispatch>();
   const cards = useCards();
   const converterFrom = cards.converter.from;
   const converterTo = cards.converter.to;
@@ -16,7 +14,7 @@ export default function ConverterBody() {
             Online currency converter
           </span>
           <span className="w-[132px] h-[21px] font-normal leading-[20.42px] text-converter-bodyMuted">
-            09/29/2023 14:15
+            09/29/2023 ChangeTime
           </span>
         </div>
         <div className="w-[1296px] h-[200px] gap-[24px] flex flex-row">

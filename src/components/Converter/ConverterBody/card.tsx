@@ -1,6 +1,5 @@
 import { useState } from "react";
-// import { api } from "@/utils/DataRetriever";
-import type { Coin } from "@/utils/DataTypes";
+import { type Coin, formatAmount } from "@/utils";
 import SearchResult from "./searchResults";
 import { useIsDark, useCurrency } from "@/state";
 
@@ -14,9 +13,20 @@ export default function Card({
   const currency = useCurrency();
   const isDark = useIsDark();
   const [results, showResults] = useState(false);
+  const [amount, setAmount] = useState("0");
 
   const handleClick = () => {
     showResults(!results);
+  };
+
+  const handleChangeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const amount = e.target.value;
+    const splitAmount = amount.split(",");
+    const parsedAmount = Number(splitAmount.join(""));
+    console.log("🚀 ~ handleChangeAmount ~ parsedAmount:", parsedAmount);
+    const amountFormatted = formatAmount(e.target.value);
+    console.log("🚀 ~ handleChangeAmount ~ amountFormatted:", amountFormatted);
+    setAmount(amountFormatted);
   };
 
   return (
@@ -62,6 +72,8 @@ export default function Card({
             <input
               type="text"
               placeholder="0.00"
+              onChange={handleChangeAmount}
+              value={amount}
               className="flex outline-none bg-converter-cardBase text-[20px] leading-[16px] font-medium text-converter-cardBase text-right"
             />
           </div>
