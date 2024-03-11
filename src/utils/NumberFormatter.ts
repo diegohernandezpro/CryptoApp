@@ -59,3 +59,7 @@ export const formatSparklineData = (data: number[]): number[] => {
 export const formatAmount = (amount: string): string => {
   return `${numeral(amount).format("0,0")}`;
 };
+
+export const formattedStringToNumber = (amount: string): number => {
+  return Number(amount.split(",").join(""));
+};

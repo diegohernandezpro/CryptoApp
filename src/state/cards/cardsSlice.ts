@@ -14,6 +14,8 @@ interface CardState {
   converter: {
     from: Coin | null;
     to: Coin | null;
+    amount: string | null;
+    convertedAmount: string | null;
   };
 }
 
@@ -24,6 +26,8 @@ const initialState: CardState = {
   converter: {
     from: null,
     to: null,
+    amount: null,
+    convertedAmount: null,
   },
 };
 
@@ -36,6 +40,12 @@ const cardsSlice = createSlice({
     },
     setConverterTo: (state, action: PayloadAction<Coin>) => {
       state.converter.to = action.payload;
+    },
+    setAmount: (state, action: PayloadAction<string>) => {
+      state.converter.amount = action.payload;
+    },
+    setConvertedAmount: (state, action: PayloadAction<string>) => {
+      state.converter.convertedAmount = action.payload;
     },
     isActive: (
       state,
@@ -95,8 +105,13 @@ export const getData = createAsyncThunk(
   }
 );
 
-export const { isActive, setConverterFrom, setConverterTo } =
-  cardsSlice.actions;
+export const {
+  isActive,
+  setConverterFrom,
+  setConverterTo,
+  setAmount,
+  setConvertedAmount,
+} = cardsSlice.actions;
 
 export const useCards = () => {
   return useSelector((state: RootState) => state.cards);

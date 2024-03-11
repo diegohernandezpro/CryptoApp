@@ -7,6 +7,7 @@ export {
   formatSliderPrice,
   formatSparklineData,
   formatAmount,
+  formattedStringToNumber,
 } from "./NumberFormatter";
 export { default } from "./LoadingCricle.tsx";
 ("");

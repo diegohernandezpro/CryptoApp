@@ -1,11 +1,7 @@
-import { useCards } from "@/state";
 import Card from "./card";
+import ConvertedCard from "./convertedCard";
 
 export default function ConverterBody() {
-  const cards = useCards();
-  const converterFrom = cards.converter.from;
-  const converterTo = cards.converter.to;
-
   return (
     <div className="converter-body">
       <span className="w-[1296px] h-[277px] flex flex-col gap-[24px]">
@@ -18,8 +14,8 @@ export default function ConverterBody() {
           </span>
         </div>
         <div className="w-[1296px] h-[200px] gap-[24px] flex flex-row">
-          <Card cardType="buy" coin={converterFrom} />
-          <Card cardType="sell" coin={converterTo} />
+          <Card />
+          <ConvertedCard />
         </div>
       </span>
       <span className="w-[1296px] h-[375px] gap-[40px] border-2 border-[yellow]"></span>

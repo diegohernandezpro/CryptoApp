@@ -6,5 +6,7 @@ export {
   useCards,
   setConverterFrom,
   setConverterTo,
+  setAmount,
+  setConvertedAmount,
 } from "./cards/cardsSlice";
 export type { AppDispatch, RootState } from "./store";
