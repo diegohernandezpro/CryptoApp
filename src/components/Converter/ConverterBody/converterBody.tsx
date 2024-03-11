@@ -19,7 +19,7 @@ export default function ConverterBody() {
         </div>
       </span>
       <span className="w-[1296px] h-[375px] gap-[40px] border-2 border-[yellow]"></span>
-      <span className="w-[463px] h-[42px] gap-[8px] rounded-lg p-1 border-2 border-[yellow]"></span>
+      <span className="w-[463px] h-[42px] gap-[8px] rounded-lg p-1 border-2 border-[blue]"></span>
     </div>
   );
 }

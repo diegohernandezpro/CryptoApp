@@ -24,17 +24,17 @@ export default function Card() {
 
   const handleChangeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     const amount: string = e.target.value;
+    console.log("🚀 ~ handleChangeAmount ~ amount:", amount);
     if (!cards.converter.to || !cards.converter.from) return undefined;
 
-    const displayAmount = formatAmount(
-      String(
-        formattedStringToNumber(amount) *
-          formattedStringToNumber(cards.converter.from.price) *
-          Number(cards.converter.to.price)
-      )
-    );
+    const a = Number(amount);
+    const b = formattedStringToNumber(cards.converter.from.price);
+    const c = formattedStringToNumber(cards.converter.to.price);
+    const product = b > 1 ? (a * b) / c : a * b * c;
+    const decimalPlaces = product.toFixed(3).toString().split(".")[1].length;
+    const displayAmount = formatAmount(product, decimalPlaces);
 
-    dispatch(setAmount(formatAmount(amount)));
+    dispatch(setAmount(amount));
     dispatch(setConvertedAmount(displayAmount));
   };
 

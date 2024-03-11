@@ -56,10 +56,18 @@ export const formatSparklineData = (data: number[]): number[] => {
   return data.filter((_, index) => index % 8 === 0);
 };
 
-export const formatAmount = (amount: string): string => {
-  return `${numeral(amount).format("0,0")}`;
+export const formatAmount = (
+  amount: number,
+  decimalPlaces: number = 0
+): string => {
+  let formatString = "0,0";
+  if (decimalPlaces > 0) {
+    formatString += "." + "0".repeat(decimalPlaces);
+  }
+
+  return numeral(amount).format(formatString);
 };
 
 export const formattedStringToNumber = (amount: string): number => {
-  return Number(amount.split(",").join(""));
+  return Number(amount.replace(/,/g, ""));
 };
