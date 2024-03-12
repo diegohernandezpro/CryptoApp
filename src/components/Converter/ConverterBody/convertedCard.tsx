@@ -59,7 +59,7 @@ export default function ConvertedCard() {
           <div className="h-[16px] text-[20px] leading-[16px] font-medium flex justify-center items-center">
             <div>
               {cards.converter.convertedAmount
-                ? cards.converter.convertedAmount
+                ? `${currency.symbol}${cards.converter.convertedAmount}`
                 : `${currency.symbol}0.00`}
             </div>
           </div>

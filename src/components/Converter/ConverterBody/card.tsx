@@ -14,7 +14,7 @@ import {
 export default function Card() {
   const currency = useCurrency();
   const isDark = useIsDark();
-  const cards = useCards();
+  const cards = useCards(); //here get new data when changed currency
   const dispatch = useDispatch<AppDispatch>();
   const [results, setResults] = useState(false);
 
@@ -28,7 +28,6 @@ export default function Card() {
 
   const handleChangeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     const amount: string = e.target.value;
-    console.log("🚀 ~ handleChangeAmount ~ amount:", amount);
     if (!cards.converter.to || !cards.converter.from) return undefined;
 
     const a = Number(amount);

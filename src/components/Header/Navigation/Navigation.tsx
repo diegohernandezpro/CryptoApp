@@ -5,7 +5,7 @@ export default function Navigation() {
   const [isHomeActive, setIsHomeActive] = useState(true);
 
   return (
-    <div className="h-12 w-[265px] flex gap-6 ">
+    <div className="h-12 w-[265px] flex gap-6">
       <span
         onClick={() => setIsHomeActive(true)}
         className={`w-[110px] nav-item ${

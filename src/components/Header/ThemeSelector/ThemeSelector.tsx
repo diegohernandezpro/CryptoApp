@@ -11,7 +11,7 @@ const ThemeSelector = () => {
 
   return (
     <button
-      className="canvas-item w-12 h-12 p-2.75 gap-2.5 rounded-2xl"
+      className="canvas-item w-12 h-12 p-2.75 gap-2.5 rounded-2xl hover:shadow-custom"
       onClick={() => dispatch(toogleTheme())}
     >
       {isDark ? (

@@ -1,4 +1,4 @@
-export { useCurrency } from "./currency/currencySlice.tsx";
+export { useCurrency, setCurrency } from "./currency/currencySlice.tsx";
 export { useIsDark } from "./theme/themeSlice.tsx";
 export { getData as getTableData, useTable } from "./table/tableSlice";
 export {

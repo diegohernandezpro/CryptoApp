@@ -51,7 +51,7 @@ export default function SearchBar() {
   return (
     <div>
       <form
-        className="canvas-item w-[356px] h-12 gap-3 py-2 px-4"
+        className="canvas-item w-[356px] h-12 gap-3 py-2 px-4 hover:shadow-custom"
         onSubmit={handleFormSubmit}
       >
         <img
@@ -65,23 +65,21 @@ export default function SearchBar() {
         />
 
         <input
-          className="w-full h-full bg-header-muted placeholder:text-header-base text-header-base outline-none focus:outline-none"
+          className="w-full h-full placeholder:text-header-base text-header-base outline-none focus:outline-none bg-header-muted border-none"
           type="text"
           placeholder="Search..."
           onChange={handleInputChange}
           value={searchTerm}
         />
       </form>
-      <>
-        {isVisible && (
-          <SearchResult
-            results={results}
-            isLoading={isLoading}
-            hasError={hasError}
-            handleLinkClick={handleLinkClick}
-          />
-        )}
-      </>
+      {isVisible && (
+        <SearchResult
+          results={results}
+          isLoading={isLoading}
+          hasError={hasError}
+          handleLinkClick={handleLinkClick}
+        />
+      )}
     </div>
   );
 }

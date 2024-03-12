@@ -37,6 +37,10 @@ body {
     
     --color-header-border: #242431;
 
+    --color-header-currency-bg: #ffffff;
+    --color-header-currency-text: #242431;
+
+
     /* converter */
     --color-converter-bg-base: #232336;
     --color-converter-bg-accent: #6161D6;
@@ -121,6 +125,9 @@ body {
     --color-header-bg-accent: #6161D6;
     
     --color-header-border: #ffffff;
+
+    --color-header-currency-bg: #424286;
+    --color-header-currency-text: #CCCCFA;
 
     /* converter */
     --color-converter-bg-base: #ffffff;

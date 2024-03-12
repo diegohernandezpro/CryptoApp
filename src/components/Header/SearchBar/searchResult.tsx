@@ -21,8 +21,8 @@ const SearchResult = ({
               className="w-[356px] h-36 bg-header-muted border border-header-base overflow-auto flex flex-col gap-1 text-header-base"
               onClick={handleLinkClick}
             >
-              {results.map(({ name, symbol, id }) => (
-                <li key={id} className="hover:bg-header-accent">
+              {results.map(({ name, symbol }) => (
+                <li key={name} className="hover:bg-header-accent">
                   <p onClick={handleLinkClick}>
                     {name} ({symbol})
                   </p>

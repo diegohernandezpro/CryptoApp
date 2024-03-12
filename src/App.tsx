@@ -1,16 +1,20 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState } from "./state/store";
+import { useCurrency, useIsDark } from "./state";
 import { Header, Infographic } from "@/components";
 import { CoinList, CoinPage, Portfolio, ConverterPage } from "@/pages";
 
 export default function App() {
-  const isDark = useSelector((state: RootState) => state.theme.isDark);
+  const isDark = useIsDark();
+  const currency = useCurrency();
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
   }, [isDark]);
+
+  useEffect(() => {
+    console.log("changing currency to", currency);
+  }, [currency]);
 
   return (
     <div className="app-css">

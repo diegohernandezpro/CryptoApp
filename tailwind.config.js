@@ -14,6 +14,7 @@ export default {
         header: {
           base: "var(--color-header-text-base)",
           muted: "var(--color-header-text-muted)",
+          currency: "var(--color-header-currency-text)",
         },
         converter: {
           base: "var(--color-converter-text-base)",
@@ -54,6 +55,7 @@ export default {
         base: "var(--color-header-bg-base)",
         muted: "var(--color-header-bg-muted)",
         accent: "var(--color-header-bg-accent)",
+        currency: "var(--color-header-currency-bg)",
       },
       converter: {
         base: "var(--color-converter-bg-base)",
