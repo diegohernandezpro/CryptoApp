@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/state";
 import { formatAmount, formattedStringToNumber } from "@/utils";
@@ -41,6 +41,10 @@ export default function Card() {
     dispatch(setAmount(amount));
     dispatch(setConvertedAmount(displayAmount));
   };
+
+  useEffect(() => {
+    console.log("CARDDDD currency changed");
+  }, [currency]);
 
   return (
     <div className="converter-card">

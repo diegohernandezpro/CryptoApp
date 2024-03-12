@@ -36,6 +36,7 @@ export const getGraphData = createAsyncThunk(
     );
     const jsonresponse: string = JSON.stringify(response);
     const jsonData = JSON.parse(jsonresponse);
+    console.log("🚀 ~ jsonData:", jsonData);
 
     const prices: number[] = jsonData.prices.map(
       (priceTuple: [number, number]) => priceTuple[1]
