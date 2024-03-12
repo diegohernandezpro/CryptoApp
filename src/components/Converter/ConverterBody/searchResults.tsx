@@ -11,8 +11,10 @@ import { Coin } from "@/utils/DataTypes";
 
 export default function SearchResult({
   cardType,
+  hideResults,
 }: {
   cardType: "buy" | "sell";
+  hideResults: () => void;
 }) {
   const cards = useCards();
   const dispatch = useDispatch<AppDispatch>();
@@ -27,6 +29,7 @@ export default function SearchResult({
     } else {
       dispatch(setConverterTo(card));
     }
+    hideResults();
   };
 
   return (

@@ -9,7 +9,11 @@ export default function ConvertedCard() {
   const [results, setResults] = useState(false);
 
   const showResults = () => {
-    setResults(!results);
+    setResults(true);
+  };
+
+  const hideResults = () => {
+    setResults(false);
   };
 
   return (
@@ -70,7 +74,7 @@ export default function ConvertedCard() {
       </div>
       {results && (
         <div className="z-10">
-          <SearchResult cardType={"sell"} />
+          <SearchResult cardType={"sell"} hideResults={hideResults} />
         </div>
       )}
     </div>

@@ -19,7 +19,11 @@ export default function Card() {
   const [results, setResults] = useState(false);
 
   const showResults = () => {
-    setResults(!results);
+    setResults(true);
+  };
+
+  const hideResults = () => {
+    setResults(false);
   };
 
   const handleChangeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +34,8 @@ export default function Card() {
     const a = Number(amount);
     const b = formattedStringToNumber(cards.converter.from.price);
     const c = formattedStringToNumber(cards.converter.to.price);
-    const product = b > 1 ? (a * b) / c : a * b * c;
+
+    const product = (a * b) / c;
     const decimalPlaces = product.toFixed(3).toString().split(".")[1].length;
     const displayAmount = formatAmount(product, decimalPlaces);
 
@@ -98,7 +103,7 @@ export default function Card() {
       </div>
       {results && (
         <div className="z-10">
-          <SearchResult cardType={"buy"} />
+          <SearchResult cardType={"buy"} hideResults={hideResults} />
         </div>
       )}
     </div>
