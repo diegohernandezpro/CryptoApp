@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/state";
 import { formatAmount, formattedStringToNumber } from "@/utils";

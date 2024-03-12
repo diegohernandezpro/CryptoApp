@@ -1,6 +1,7 @@
-import Card from "./card";
-import ConvertedCard from "./convertedCard";
-import { ConversionChart } from "./conversionChart";
+import Card from "./Cards/card";
+import ConvertedCard from "./Cards/convertedCard";
+import { ConversionChart } from "./Chart/conversionChart";
+import ConverterTimeSelector from "./Chart/converterTimeSelector";
 
 export default function ConverterBody() {
   return (
@@ -21,7 +22,7 @@ export default function ConverterBody() {
       </span>
       <div className="w-[1296px] h-[375px] flex flex-col gap-[40px]">
         <ConversionChart />
-        <span className="w-[463px] h-[42px] gap-[8px] rounded-lg p-1 border-2 border-[blue]"></span>
+        <ConverterTimeSelector />
       </div>
     </div>
   );
