@@ -1,5 +1,6 @@
 import Card from "./card";
 import ConvertedCard from "./convertedCard";
+import { ConversionChart } from "./conversionChart";
 
 export default function ConverterBody() {
   return (
@@ -18,8 +19,10 @@ export default function ConverterBody() {
           <ConvertedCard />
         </div>
       </span>
-      <span className="w-[1296px] h-[375px] gap-[40px] border-2 border-[yellow]"></span>
-      <span className="w-[463px] h-[42px] gap-[8px] rounded-lg p-1 border-2 border-[blue]"></span>
+      <div className="w-[1296px] h-[375px] flex flex-col gap-[40px]">
+        <ConversionChart />
+        <span className="w-[463px] h-[42px] gap-[8px] rounded-lg p-1 border-2 border-[blue]"></span>
+      </div>
     </div>
   );
 }

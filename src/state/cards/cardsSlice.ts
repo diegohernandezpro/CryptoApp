@@ -16,6 +16,7 @@ interface CardState {
     to: Coin | null;
     amount: string | null;
     convertedAmount: string | null;
+    sparkline: string[] | null;
   };
 }
 
@@ -28,6 +29,7 @@ const initialState: CardState = {
     to: null,
     amount: null,
     convertedAmount: null,
+    sparkline: null,
   },
 };
 
@@ -87,6 +89,7 @@ export const getData = createAsyncThunk(
     );
     const jsonresponse = JSON.stringify(response);
     const jsonData = JSON.parse(jsonresponse);
+    console.log("🚀 ~ jsonData:", jsonData);
 
     const formatedCoinArray: Coin[] = jsonData.map((coin: DataTable): Coin => {
       return {

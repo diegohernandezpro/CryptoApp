@@ -42,10 +42,6 @@ export default function Card() {
     dispatch(setConvertedAmount(displayAmount));
   };
 
-  useEffect(() => {
-    console.log("CARDDDD currency changed");
-  }, [currency]);
-
   return (
     <div className="converter-card">
       <p className="w-[55px] h-[24px] text-sm leading-6 opacity-80 text-converter-cardBase">

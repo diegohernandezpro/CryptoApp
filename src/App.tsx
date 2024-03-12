@@ -12,9 +12,7 @@ export default function App() {
     document.documentElement.classList.toggle("dark", isDark);
   }, [isDark]);
 
-  useEffect(() => {
-    console.log("changing currency to", currency);
-  }, [currency]);
+  useEffect(() => {}, [currency]);
 
   return (
     <div className="app-css">

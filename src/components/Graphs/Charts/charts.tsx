@@ -26,11 +26,10 @@ ChartJS.register(
 
 import { Line, Bar } from "react-chartjs-2";
 import { barChart, lineChart, colors } from "./chartOptions";
-import { useSelector } from "react-redux";
-import { RootState } from "@/state/store";
+import { useGraph } from "@/state";
 
 export default function Chart({ chartType }: { chartType: "bar" | "line" }) {
-  const { data: chartsData } = useSelector((state: RootState) => state.graph);
+  const { data: chartsData } = useGraph();
 
   if (!chartsData) return null;
 

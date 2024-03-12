@@ -19,4 +19,5 @@ export type {
   TimeFrame,
   TimeOptions,
   SearchType,
+  ChartOptions,
 } from "./DataTypes";

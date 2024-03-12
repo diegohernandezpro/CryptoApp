@@ -4,6 +4,7 @@ import { api } from "@/utils/DataRetriever";
 import FETCHING_STATE from "../fetchingState";
 import type { DataGraph, TimeFrame } from "@/utils/DataTypes";
 import { formatNum } from "@/utils/NumberFormatter";
+import { useSelector } from "react-redux";
 
 interface GraphSelectorState {
   status: string;
@@ -36,7 +37,6 @@ export const getGraphData = createAsyncThunk(
     );
     const jsonresponse: string = JSON.stringify(response);
     const jsonData = JSON.parse(jsonresponse);
-    console.log("🚀 ~ jsonData:", jsonData);
 
     const prices: number[] = jsonData.prices.map(
       (priceTuple: [number, number]) => priceTuple[1]
@@ -98,5 +98,9 @@ const graphSlice = createSlice({
 });
 
 export const { setSelection } = graphSlice.actions;
+
+export const useGraph = () => {
+  return useSelector((state: RootState) => state.graph);
+};
 
 export default graphSlice.reducer;

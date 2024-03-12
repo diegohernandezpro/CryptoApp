@@ -6,7 +6,6 @@ export async function api(url: string, search?: SearchType) {
   const base = "https://api.coingecko.com/api/v3";
   const fullUrl = `${base}${url}${search || ""}`;
 
-  console.log("🚀 ~ api ~ fullUrl:", fullUrl);
   const getfileName = () => {
     const fullUrlName = url.split("/").slice(1);
     const urlKey = fullUrlName[fullUrlName.length - 1];

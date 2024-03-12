@@ -68,6 +68,38 @@ type Coin = {
   cirtulatingVsTotalSupply?: number;
 };
 
+type ChartOptions = {
+  responsive: boolean;
+  plugins: {
+    legend: {
+      display: boolean;
+    };
+  };
+  maintainAspectRatio: boolean;
+  elements?: {
+    point: {
+      radius: number;
+    };
+  };
+  scales: {
+    y: {
+      display: boolean;
+      grid: {
+        display: boolean;
+        drawBorder: boolean;
+      };
+    };
+    x: {
+      display: boolean;
+      grid: {
+        display: boolean;
+        drawBorder: boolean;
+      };
+    };
+  };
+  tension?: number;
+};
+
 type TimeFrame = {
   displayString: string;
   timeFrame: string;
@@ -115,5 +147,6 @@ export type {
   TimeFrame,
   TimeOptions,
   SearchType,
+  ChartOptions,
 };
 export default ApiType;

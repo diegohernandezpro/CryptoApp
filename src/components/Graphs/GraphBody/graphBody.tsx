@@ -1,5 +1,6 @@
 import GraphSummary from "../GraphSummary/graphSummary";
 import Charts from "../Charts/charts";
+
 export default function GraphBody() {
   return (
     <div className="graph-body-container">
