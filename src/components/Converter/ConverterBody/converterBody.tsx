@@ -12,7 +12,7 @@ export default function ConverterBody() {
             Online currency converter
           </span>
           <span className="w-[132px] h-[21px] font-normal leading-[20.42px] text-converter-bodyMuted">
-            09/29/2023 ChangeTime
+            09/29/2023
           </span>
         </div>
         <div className="w-[1296px] h-[200px] gap-[24px] flex flex-row">

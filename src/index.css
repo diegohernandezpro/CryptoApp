@@ -309,11 +309,11 @@ body {
     }
 
     .converter-page {
-        @apply flex flex-col w-[1296px] h-[817px] top-12 gap-[40px] relative 
+        @apply flex flex-col w-[1296px] h-full top-12 gap-[40px] relative
     }
 
     .converter-body {
-        @apply w-[1296px] h-[724px] gap-[70px] flex flex-col
+        @apply w-[1296px] h-[754px] gap-[70px] flex flex-col
     }
 
     .converter-card {

@@ -4,7 +4,7 @@ export default function CoinList() {
   return (
     <div className="body-container">
       <ConverterNav />
-      <div className="body-wrapper ">
+      <div className="body-wrapper">
         <Graphs />
         <CoinTable />
       </div>
