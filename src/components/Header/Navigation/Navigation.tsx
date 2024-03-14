@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useIsDark } from "@/state/theme/themeSlice";
+import { Link } from "react-router-dom";
 
 export default function Navigation() {
   const [isHomeActive, setIsHomeActive] = useState(true);
 
   return (
     <div className="h-12 w-[265px] flex gap-6">
-      <span
+      <Link
+        to={"/"}
         onClick={() => setIsHomeActive(true)}
         className={`w-[110px] nav-item ${
           isHomeActive ? "opacity-100 font-bold" : "opacity-50"
@@ -21,8 +23,9 @@ export default function Navigation() {
           alt="home-icon"
         />
         <p>Home</p>
-      </span>
-      <span
+      </Link>
+      <Link
+        to={"/portfolio"}
         onClick={() => setIsHomeActive(false)}
         className={`w-[131px] nav-item ${
           isHomeActive ? "opacity-50" : "opacity-100 font-bold"
@@ -37,7 +40,7 @@ export default function Navigation() {
           alt="portfolio-icon"
         />
         <p>Portfolio</p>
-      </span>
+      </Link>
     </div>
   );
 }

@@ -44,6 +44,10 @@ export default {
           base: "var(--color-electric-text-positive)",
           muted: "var(--color-electric-text-negative)",
         },
+        portfolio: {
+          base: "var(--color-portfolio-text-base)",
+          muted: "var(--color-portfolio-text-muted)",
+        },
       },
     },
     backgroundColor: {
@@ -79,6 +83,11 @@ export default {
       },
       table: {
         base: "var(--color-table-bg-base)",
+      },
+      portfolio: {
+        base: "var(--color-portfolio-bg-base)",
+        muted: "var(--color-portfolio-bg-muted)",
+        image: "var(--color-portfolio-bg-image)",
       },
     },
     borderColor: {

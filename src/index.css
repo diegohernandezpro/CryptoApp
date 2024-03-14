@@ -65,6 +65,15 @@ body {
     --color-card-text-checked-base: #ffffff;
     --color-card-text-checked-muted: #D1D1D1;
 
+    /* portfolio */
+    --color-portfolio-bg-base: #191932;
+    --color-portfolio-bg-muted: #1E1932;
+    --color-portfolio-bg-image: #2C2C4A;
+
+    --color-portfolio-text-base: #fff;
+    --color-portfolio-text-muted: #D1D1D1;
+
+
     /* graph */
     --color-graph-bg-base: #191932;
     --color-graph-bg-muted: #1E1932;
@@ -153,6 +162,14 @@ body {
     --color-card-text-muted: #424286;
     --color-card-text-checked-base: #ffffff;
     --color-card-text-checked-muted: rgba(255, 255, 255, 0.7);
+
+    /* portfolio */
+    --color-portfolio-bg-base: #B0B0F0;
+    --color-portfolio-bg-muted: #fff;
+    --color-portfolio-bg-image: rgba(255, 255, 255, 0.7);
+
+    --color-portfolio-text-base: #181825;
+    --color-portfolio-text-muted: #191932;
 
     /* graph */
     --color-graph-bg-base: #ffffff;
